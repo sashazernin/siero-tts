@@ -1,0 +1,26 @@
+{
+  "appId": "com.siero-tts.app",
+  "productName": "siero-tts",
+  "directories": {
+    "output": "dist/apps/desktop"
+  },
+  "files": [
+    "apps/desktop/src/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "dist/apps/api",
+      "to": "bin/api",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "dist/apps/web",
+      "to": "web",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": "nsis"
+  }
+}

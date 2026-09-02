@@ -1,0 +1,528 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.6.11",
+  "pathMappings": {
+    "@siero-tts/shared": [
+      "libs/shared/src/index.ts"
+    ],
+    "@siero-tts/ui": [
+      "libs/ui/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "electron-builder.json",
+        "hash": "10672390012855800183"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "18104480646866514740"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "13433217807210833301"
+      },
+      {
+        "file": "README.md",
+        "hash": "3346691182251530677"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "13194702717607086212"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11688401206525180159"
+      },
+      {
+        "file": "nx.json",
+        "hash": "7212375146203297501"
+      },
+      {
+        "file": "package.json",
+        "hash": "10886153897642051577"
+      },
+      {
+        "file": "latest_silero_models.yml",
+        "hash": "1265057395304281555"
+      }
+    ],
+    "projectFileMap": {
+      "api": [
+        {
+          "file": "apps/api/package.json",
+          "hash": "2177819437385055386",
+          "deps": [
+            "npm:@fastify/cors",
+            "shared",
+            "npm:fastify"
+          ]
+        },
+        {
+          "file": "apps/api/project.json",
+          "hash": "12315207107026665023"
+        },
+        {
+          "file": "apps/api/python/latest_silero_models.yml",
+          "hash": "1265057395304281555"
+        },
+        {
+          "file": "apps/api/python/requirements.txt",
+          "hash": "10328907733116658414"
+        },
+        {
+          "file": "apps/api/python/test_pipeline.py",
+          "hash": "1138190066013121890"
+        },
+        {
+          "file": "apps/api/python/worker.py",
+          "hash": "11384179807621838908"
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "7389623481125003261",
+          "deps": [
+            "npm:fastify",
+            "npm:@fastify/cors",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/api/src/silero-worker.ts",
+          "hash": "677924906293795509"
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "5726880813533895010"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "13690971072820468491"
+        }
+      ],
+      "web": [
+        {
+          "file": "apps/web/index.html",
+          "hash": "5594785772335297333"
+        },
+        {
+          "file": "apps/web/jest.config.js",
+          "hash": "1632634055247779903"
+        },
+        {
+          "file": "apps/web/package.json",
+          "hash": "3995744824897437113",
+          "deps": [
+            "shared",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/web/project.json",
+          "hash": "3375534026667025578"
+        },
+        {
+          "file": "apps/web/public/favicon.ico",
+          "hash": "2949791817221603359"
+        },
+        {
+          "file": "apps/web/public/index.html",
+          "hash": "6283320323736086875"
+        },
+        {
+          "file": "apps/web/public/logo192.png",
+          "hash": "7585273181698778288"
+        },
+        {
+          "file": "apps/web/public/logo512.png",
+          "hash": "9339365414554387981"
+        },
+        {
+          "file": "apps/web/public/manifest.json",
+          "hash": "1447645250373428393"
+        },
+        {
+          "file": "apps/web/public/robots.txt",
+          "hash": "2790380794362165217"
+        },
+        {
+          "file": "apps/web/src/App.module.css",
+          "hash": "4259973564470267246"
+        },
+        {
+          "file": "apps/web/src/App.test.tsx",
+          "hash": "14161373010242881283",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/web/src/App.tsx",
+          "hash": "302082828947280977",
+          "deps": [
+            "npm:react",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/web/src/api/tts.ts",
+          "hash": "4691740273734301791",
+          "deps": [
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/AppHeader/AppHeader.module.css",
+          "hash": "7034937298856832546"
+        },
+        {
+          "file": "apps/web/src/components/AppHeader/AppHeader.tsx",
+          "hash": "5203190447808685995",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/AppHeader/index.ts",
+          "hash": "9855135387560150749"
+        },
+        {
+          "file": "apps/web/src/components/BackgroundLayout/BackgroundLayout.module.css",
+          "hash": "10990964374811702422"
+        },
+        {
+          "file": "apps/web/src/components/BackgroundLayout/BackgroundLayout.tsx",
+          "hash": "10294131856245198972",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/BackgroundLayout/index.ts",
+          "hash": "10016505672100636008"
+        },
+        {
+          "file": "apps/web/src/components/ConvertButton/ConvertButton.tsx",
+          "hash": "12715575862851296879",
+          "deps": [
+            "npm:react",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/ConvertButton/index.ts",
+          "hash": "7968829703706374032"
+        },
+        {
+          "file": "apps/web/src/components/GenerationHistory/GenerationHistory.module.css",
+          "hash": "9983041532204524523"
+        },
+        {
+          "file": "apps/web/src/components/GenerationHistory/GenerationHistory.tsx",
+          "hash": "8183235648006096064",
+          "deps": [
+            "npm:react",
+            "ui",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/GenerationHistory/index.ts",
+          "hash": "17080573140424153960"
+        },
+        {
+          "file": "apps/web/src/components/TtsInput/TtsInput.module.css",
+          "hash": "15657196490602743938"
+        },
+        {
+          "file": "apps/web/src/components/TtsInput/TtsInput.tsx",
+          "hash": "7728148327398657648",
+          "deps": [
+            "npm:react",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/TtsInput/index.ts",
+          "hash": "2375393956952030230"
+        },
+        {
+          "file": "apps/web/src/components/VoiceControls/VoiceControls.module.css",
+          "hash": "13387236713542702058"
+        },
+        {
+          "file": "apps/web/src/components/VoiceControls/VoiceControls.tsx",
+          "hash": "11915640177704267121",
+          "deps": [
+            "npm:react",
+            "ui",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/VoiceControls/index.ts",
+          "hash": "2422417498163985630"
+        },
+        {
+          "file": "apps/web/src/config/api.ts",
+          "hash": "12634521864756664493"
+        },
+        {
+          "file": "apps/web/src/hooks/useTtsApp.ts",
+          "hash": "7122673316826267359",
+          "deps": [
+            "npm:react",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/main.tsx",
+          "hash": "2166769733669063148",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/web/src/setupTests.ts",
+          "hash": "4941352530169676329",
+          "deps": [
+            "npm:@testing-library/jest-dom"
+          ]
+        },
+        {
+          "file": "apps/web/src/styles/global.css",
+          "hash": "8433282306879936641"
+        },
+        {
+          "file": "apps/web/src/styles/variables.css",
+          "hash": "16463521674097105692"
+        },
+        {
+          "file": "apps/web/src/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "apps/web/tsconfig.app.json",
+          "hash": "16825469633345614969"
+        },
+        {
+          "file": "apps/web/tsconfig.json",
+          "hash": "8371677153158771641"
+        },
+        {
+          "file": "apps/web/tsconfig.spec.json",
+          "hash": "9396968593635981961"
+        },
+        {
+          "file": "apps/web/vite.config.ts",
+          "hash": "18316065245160145756",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "desktop": [
+        {
+          "file": "apps/desktop/package.json",
+          "hash": "7845489437792306504"
+        },
+        {
+          "file": "apps/desktop/project.json",
+          "hash": "17269047611648984792"
+        },
+        {
+          "file": "apps/desktop/src/main.js",
+          "hash": "7962902272084352582",
+          "deps": [
+            "npm:electron"
+          ]
+        },
+        {
+          "file": "apps/desktop/src/preload.js",
+          "hash": "14764704573293920108",
+          "deps": [
+            "npm:electron"
+          ]
+        }
+      ],
+      "ui": [
+        {
+          "file": "libs/ui/package.json",
+          "hash": "165820604476860590",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "libs/ui/project.json",
+          "hash": "1610655130766628208"
+        },
+        {
+          "file": "libs/ui/src/Autocomplete/Autocomplete.module.css",
+          "hash": "2782004442787142281"
+        },
+        {
+          "file": "libs/ui/src/Autocomplete/Autocomplete.tsx",
+          "hash": "6809670829651080535",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Autocomplete/index.ts",
+          "hash": "9358531166334991650"
+        },
+        {
+          "file": "libs/ui/src/Button/Button.module.css",
+          "hash": "2273088641168302558"
+        },
+        {
+          "file": "libs/ui/src/Button/Button.tsx",
+          "hash": "822493340337291466",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Button/index.ts",
+          "hash": "12586810565606824334"
+        },
+        {
+          "file": "libs/ui/src/IconButton/IconButton.module.css",
+          "hash": "9390561432817183838"
+        },
+        {
+          "file": "libs/ui/src/IconButton/IconButton.tsx",
+          "hash": "15103515841438471616",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/IconButton/index.ts",
+          "hash": "5749408165760049593"
+        },
+        {
+          "file": "libs/ui/src/Paper/Paper.module.css",
+          "hash": "15478928098002972245"
+        },
+        {
+          "file": "libs/ui/src/Paper/Paper.tsx",
+          "hash": "13978087651666621171",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Paper/index.ts",
+          "hash": "1604489507129212253"
+        },
+        {
+          "file": "libs/ui/src/Snackbar/Snackbar.module.css",
+          "hash": "18221786554667292557"
+        },
+        {
+          "file": "libs/ui/src/Snackbar/Snackbar.tsx",
+          "hash": "10767189298084341292",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Snackbar/index.ts",
+          "hash": "15418851591921116570"
+        },
+        {
+          "file": "libs/ui/src/Spinner/Spinner.module.css",
+          "hash": "2819528896393550425"
+        },
+        {
+          "file": "libs/ui/src/Spinner/Spinner.tsx",
+          "hash": "14250096780531295226",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Spinner/index.ts",
+          "hash": "3817213813353181147"
+        },
+        {
+          "file": "libs/ui/src/TextField/TextField.module.css",
+          "hash": "10116966070914819907"
+        },
+        {
+          "file": "libs/ui/src/TextField/TextField.tsx",
+          "hash": "8494087952294839664",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/TextField/index.ts",
+          "hash": "11792244884930157724"
+        },
+        {
+          "file": "libs/ui/src/ToggleGroup/ToggleGroup.module.css",
+          "hash": "15691825648629880172"
+        },
+        {
+          "file": "libs/ui/src/ToggleGroup/ToggleGroup.tsx",
+          "hash": "9299171947355707808",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/ToggleGroup/index.ts",
+          "hash": "17862792001183021884"
+        },
+        {
+          "file": "libs/ui/src/index.ts",
+          "hash": "7547685885509120417"
+        },
+        {
+          "file": "libs/ui/tsconfig.json",
+          "hash": "1450945288934925784"
+        }
+      ],
+      "shared": [
+        {
+          "file": "libs/shared/package.json",
+          "hash": "3012413928161699351"
+        },
+        {
+          "file": "libs/shared/project.json",
+          "hash": "17042916795582287384"
+        },
+        {
+          "file": "libs/shared/src/index.ts",
+          "hash": "16979824074787583486"
+        },
+        {
+          "file": "libs/shared/src/lib/types.ts",
+          "hash": "3015065859357590152"
+        },
+        {
+          "file": "libs/shared/src/lib/voices.ts",
+          "hash": "18321791095402784496"
+        },
+        {
+          "file": "libs/shared/tsconfig.json",
+          "hash": "120683878903975165"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "8524944539283698063"
+}

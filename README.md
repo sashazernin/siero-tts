@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# siero-tts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nx-монорепозиторий для синтеза речи на базе **Silero v5_cis_base_nostress**.
 
-## Available Scripts
+## Структура
 
-In the project directory, you can run:
+```
+apps/
+  web/       — React (Vite) frontend
+  api/       — Node.js (Fastify) API
+  desktop/   — Electron desktop app
+libs/
+  ui/        — переиспользуемый UI-kit
+  shared/    — типы и каталог голосов
+```
 
-### `npm start`
+## Возможности
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Выбор голоса с поиском и фильтром по полу
+- Генерация WAV через Silero
+- История генераций в React state
+- Сборка desktop-приложения через Electron
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Требования
 
-### `npm test`
+- Node.js 20+
+- Python 3.10+ с пакетами из `apps/api/python/requirements.txt`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> API написан на Node.js (Fastify). Синтез Silero выполняется Python worker-процессом, так как официального Node SDK для `v5_cis_base_nostress` нет.
 
-### `npm run build`
+## Установка
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+pip install -r apps/api/python/requirements.txt
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Если `npm install` падает из-за заблокированного `node_modules/electron` (Windows), закройте Electron-процессы и удалите папку `node_modules`, затем повторите установку.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Команды
 
-### `npm run eject`
+| Действие | Команда |
+|----------|---------|
+| Запуск (web + api) | `npm start` |
+| Сборка проекта | `npm run build` |
+| Сборка Electron | `npm run dist` |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+После `npm start`:
+- Web: http://localhost:4200
+- API: http://127.0.0.1:8000
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Установщик Electron появится в `dist/apps/desktop/`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Ударения
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Для русского, белорусского и украинского используйте знак `+` для ударения, например: `к+ошка`.

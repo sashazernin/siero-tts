@@ -1,0 +1,1371 @@
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.203Z - Started listening on: \\.\pipe\nx\C:\Users\smilw\AppData\Local\Temp\e6ad827f1d5f667ae264\d.sock
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.224Z - [WATCHER]: Subscribed to changes within: E:\Work\Projects\siero-tts (native)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.227Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.228Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.229Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.231Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.263Z - Time taken for 'loadSpecifiedNxPlugins' 1.7118000000000393ms
+Time for 'plugin worker 22516 code loading' 10.197400000000002
+Time for 'plugin worker 12468 code loading' 6.120999999999999
+Time for 'plugin worker 31872 code loading' 5.2821
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.514Z - Time taken for 'Load Nx Plugin: E:\Work\Projects\siero-tts\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 279.78039999999964ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.515Z - Time taken for 'Load Nx Plugin: E:\Work\Projects\siero-tts\node_modules\nx\src\plugins\package-json' 281.97329999999965ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.633Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.633Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.633Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.635Z - No files changed, but no in-memory cached project graph found. Recomputing it...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.639Z - Time taken for 'loadDefaultNxPlugins' 400.2487000000001ms
+Time for 'nx/core/project-json:createNodes' 1.0978999999999814
+Time for 'nx/core/package-json:createNodes' 6.483499999999992
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 20.51479999999998
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.726Z - Time taken for 'build-project-configs' 68.72449999999981ms
+Time for 'build typescript dependencies' 87.65030000000007
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.865Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.873Z - Wrote project graph cache to E:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.874Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.874Z - Time taken for 'total for creating and serializing project graph' 642.6855999999998ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.875Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.875Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 643. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.883Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.883Z - Time taken for 'preTasksExecution' 0.5738000000001193ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.883Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.883Z - Handled PRE_TASKS_EXECUTION. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.935Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.941Z - Wrote project graph cache to E:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 3.3565ms - processed 2 tasks (setup: 2.7685ms, parallel_planning: 571.4µs)
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "3922455621463659497" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "7297206777889601892"
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 6.3911ms - processed 2 plans (setup: 333.7µs, hashing: 6.054ms, assembly: 829µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.960Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.960Z - Time taken for 'write cache' 6.229900000000271ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.960Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:38.960Z - Handled HASH_TASKS. Handling time: 25. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:39.015Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:39.015Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:39.016Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 4. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.192Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.193Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.222Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.222Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.223Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.225Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.225Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.231Z - Wrote project graph cache to E:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.231Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.232Z - Time taken for 'total for creating and serializing project graph' 6.301099999999678ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.233Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.233Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.237Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.237Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.237Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+node:events:487
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use \\.\pipe\nx\C:\Users\smilw\AppData\Local\Temp\e6ad827f1d5f667ae264\d.sock
+    at Server.setupListenHandle [as _listen2] (node:net:1986:21)
+    at listenInCluster (node:net:2065:12)
+    at Server.listen (node:net:2187:5)
+    at e:\Work\Projects\siero-tts\node_modules\nx\src\daemon\server\server.js:381:20
+    at new Promise (<anonymous>)
+    at startServer (e:\Work\Projects\siero-tts\node_modules\nx\src\daemon\server\server.js:379:12)
+    at async e:\Work\Projects\siero-tts\node_modules\nx\src\daemon\server\start.js:8:9
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2044:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '\\\\.\\pipe\\nx\\C:\\Users\\smilw\\AppData\\Local\\Temp\\e6ad827f1d5f667ae264\\d.sock',
+  port: -1
+}
+
+Node.js v25.9.0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.473Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.473Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.473Z - [WATCHER]: Stopping the watcher for E:\Work\Projects\siero-tts (sources)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.473Z - [WATCHER]: Stopping the watcher for E:\Work\Projects\siero-tts (outputs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:40.474Z - Server stopped because: "this process is no longer the current daemon (native)"
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.471Z - Started listening on: \\.\pipe\nx\C:\Users\smilw\AppData\Local\Temp\e6ad827f1d5f667ae264\d.sock
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.473Z - [WATCHER]: Subscribed to changes within: e:\Work\Projects\siero-tts (native)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.480Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.482Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.504Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.504Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.504Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.506Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.531Z - Time taken for 'loadSpecifiedNxPlugins' 1.4689000000000192ms
+Time for 'plugin worker 34648 code loading' 3.5600999999999985
+Time for 'plugin worker 54008 code loading' 4.4879999999999995
+Time for 'plugin worker 4496 code loading' 3.9582999999999977
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.747Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\package-json' 239.92929999999998ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.748Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 240.56380000000001ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.759Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.759Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.759Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.760Z - No files changed, but no in-memory cached project graph found. Recomputing it...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.765Z - Time taken for 'loadDefaultNxPlugins' 252.57299999999998ms
+Time for 'nx/core/project-json:createNodes' 0.8026000000000124
+Time for 'nx/core/package-json:createNodes' 5.595700000000022
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.590900000000005
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.797Z - Time taken for 'build-project-configs' 19.87050000000005ms
+Time for 'build typescript dependencies' 16.27539999999999
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.830Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.837Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.837Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.838Z - Time taken for 'total for creating and serializing project graph' 331.90829999999994ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.838Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.838Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 332. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.842Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.842Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:54:58.842Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.252Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.253Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.329Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.330Z - [WATCHER]: .gitignore was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.330Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.330Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (sources)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.330Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (outputs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:48.331Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.045Z - Started listening on: \\.\pipe\nx\C:\Users\smilw\AppData\Local\Temp\e6ad827f1d5f667ae264\d.sock
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.047Z - [WATCHER]: Subscribed to changes within: e:\Work\Projects\siero-tts (native)
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.048Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.050Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.073Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.074Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.074Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.075Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.109Z - Time taken for 'loadSpecifiedNxPlugins' 1.6877999999999815ms
+Time for 'plugin worker 8308 code loading' 3.8866000000000014
+Time for 'plugin worker 9612 code loading' 4.670800000000003
+Time for 'plugin worker 43448 code loading' 4.401199999999999
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.352Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 274.77739999999994ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.353Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\package-json' 275.57360000000006ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.378Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.378Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.378Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.379Z - No files changed, but no in-memory cached project graph found. Recomputing it...
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.393Z - Time taken for 'loadDefaultNxPlugins' 301.88530000000003ms
+Time for 'nx/core/project-json:createNodes' 1.043299999999988
+Time for 'nx/core/package-json:createNodes' 5.8566000000000145
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.235799999999983
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.426Z - Time taken for 'build-project-configs' 29.274500000000103ms
+Time for 'build typescript dependencies' 42.9135
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.488Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.496Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.496Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.497Z - Time taken for 'total for creating and serializing project graph' 420.7371ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.498Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.498Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 421. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.502Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.502Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T00:59:53.502Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.649Z - [WATCHER]: libs/shared/src/lib/types.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.650Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.759Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.759Z - [REQUEST]: libs/shared/src/lib/types.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.759Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.762Z - Time taken for 'hash changed files from watcher' 0.22199999999429565ms
+Time for 'nx/core/project-json:createNodes' 0.8320000000021537
+Time for 'nx/core/package-json:createNodes' 3.8867000000027474
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.108700000004319
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.779Z - Time taken for 'build-project-configs' 13.175400000000081ms
+Time for 'build typescript dependencies' 4.263899999998102
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.802Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.802Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.803Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:31.803Z - Time taken for 'total execution time for createProjectGraph()' 25.873099999997066ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.669Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.670Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.670Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.671Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.677Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.677Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.677Z - Time taken for 'total for creating and serializing project graph' 6.543899999996938ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.678Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.678Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 7. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.681Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.681Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:42.681Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.489Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.491Z - [WATCHER]: libs/shared/src/lib/voices.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.599Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.599Z - [REQUEST]: libs/shared/src/lib/voices.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.599Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.603Z - Time taken for 'hash changed files from watcher' 0.1907000000064727ms
+Time for 'nx/core/project-json:createNodes' 0.8122000000003027
+Time for 'nx/core/package-json:createNodes' 3.299800000000687
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 8.135300000001735
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.620Z - Time taken for 'build-project-configs' 13.23530000000028ms
+Time for 'build typescript dependencies' 4.0702000000019325
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.645Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.646Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.646Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:00:52.646Z - Time taken for 'total execution time for createProjectGraph()' 27.999500000005355ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:00.882Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:00.883Z - [WATCHER]: apps/web/src/hooks/useTtsApp.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.085Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.086Z - [REQUEST]: apps/web/src/hooks/useTtsApp.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.086Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.090Z - Time taken for 'hash changed files from watcher' 0.3034999999945285ms
+Time for 'nx/core/project-json:createNodes' 0.701600000000326
+Time for 'nx/core/package-json:createNodes' 3.5050000000046566
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.930900000006659
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.106Z - Time taken for 'build-project-configs' 13.736799999998766ms
+Time for 'build typescript dependencies' 3.8299999999871943
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.133Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.133Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.134Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:01.134Z - Time taken for 'total execution time for createProjectGraph()' 29.061100000006263ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.237Z - [WATCHER]: apps/web/src/components/VoiceControls/VoiceControls.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.237Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.650Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.650Z - [REQUEST]: apps/web/src/components/VoiceControls/VoiceControls.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.650Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.652Z - Time taken for 'hash changed files from watcher' 0.23449999999138527ms
+Time for 'nx/core/project-json:createNodes' 0.515400000003865
+Time for 'nx/core/package-json:createNodes' 2.032600000005914
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.833599999998114
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.664Z - Time taken for 'build-project-configs' 9.093500000002678ms
+Time for 'build typescript dependencies' 3.091899999999441
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.683Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.683Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.683Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:09.683Z - Time taken for 'total execution time for createProjectGraph()' 20.816099999996368ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:10.899Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:10.900Z - [WATCHER]: apps/web/src/components/VoiceControls/VoiceControls.module.css was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.239Z - [WATCHER]: apps/web/src/components/VoiceControls/VoiceControls.module.css was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.239Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.775Z - [WATCHER]: apps/web/src/App.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.775Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.989Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.989Z - [REQUEST]: apps/web/src/components/VoiceControls/VoiceControls.module.css,apps/web/src/App.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.989Z - [REQUEST]: 
+Time for 'nx/core/project-json:createNodes' 0.5308999999979278
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:11.992Z - Time taken for 'hash changed files from watcher' 0.48840000000200234ms
+Time for 'nx/core/package-json:createNodes' 2.417700000005425
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.804699999993318
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:12.004Z - Time taken for 'build-project-configs' 10.031800000011572ms
+Time for 'build typescript dependencies' 2.4919000000081724
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:12.022Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:12.022Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:12.022Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:12.022Z - Time taken for 'total execution time for createProjectGraph()' 19.550399999992806ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:13.087Z - [WATCHER]: apps/web/src/App.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:13.087Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.290Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.291Z - [WATCHER]: apps/web/src/App.test.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.696Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.696Z - [REQUEST]: apps/web/src/App.tsx,apps/web/src/App.test.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.696Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.698Z - Time taken for 'hash changed files from watcher' 0.28900000000430737ms
+Time for 'nx/core/project-json:createNodes' 0.6064999999944121
+Time for 'nx/core/package-json:createNodes' 2.632400000002235
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.0187000000005355
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.716Z - Time taken for 'build-project-configs' 12.769800000009127ms
+Time for 'build typescript dependencies' 3.069600000002538
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.735Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.736Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.736Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:14.736Z - Time taken for 'total execution time for createProjectGraph()' 22.36030000000028ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:19.082Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:19.083Z - [WATCHER]: apps/web/src/hooks/useTtsApp.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.831Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.831Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.832Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.834Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.834Z - Recomputing project graph because of 1 updated and 0 deleted files.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.834Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.834Z - [REQUEST]: apps/web/src/hooks/useTtsApp.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.834Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.836Z - Time taken for 'hash changed files from watcher' 0.23099999999976717ms
+Time for 'nx/core/project-json:createNodes' 0.78169999999227
+Time for 'nx/core/package-json:createNodes' 2.625
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.770699999993667
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.849Z - Time taken for 'build-project-configs' 10.557700000004843ms
+Time for 'build typescript dependencies' 1.8956000000034692
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.866Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.866Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.866Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.872Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.873Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.873Z - Time taken for 'total for creating and serializing project graph' 38.816399999996065ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.874Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.874Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 39. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.880Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.880Z - Time taken for 'preTasksExecution' 0.49119999998947605ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.880Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.880Z - Handled PRE_TASKS_EXECUTION. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.909Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.915Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 3.8749ms - processed 1 tasks (setup: 2.8887ms, parallel_planning: 976.2µs)
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "7212375146203297501" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "9818427235281776710"
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 5.7586ms - processed 1 plans (setup: 451.6µs, hashing: 5.3021ms, assembly: 667.8µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.934Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.934Z - Time taken for 'write cache' 5.610800000009476ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.934Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.934Z - Handled HASH_TASKS. Handling time: 25. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.977Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.977Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:20.977Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 20. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:23.965Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.076Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.077Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.077Z - Handled RECORD_OUTPUTS_HASH. Handling time: 7. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.078Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.157Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.158Z - Done responding to the client handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.158Z - Handled RECORD_TASK_RUNS. Handling time: 11. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.159Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.159Z - Done responding to the client handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.159Z - Handled GET_FLAKY_TASKS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.163Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.163Z - Time taken for 'postTasksExecution' 0.16990000000805594ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.163Z - Done responding to the client handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.163Z - Handled POST_TASKS_EXECUTION. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.166Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.465Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.465Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.466Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.468Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.468Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.474Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.474Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.475Z - Time taken for 'total for creating and serializing project graph' 6.17259999999078ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.475Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.476Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.482Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.482Z - Time taken for 'preTasksExecution' 0.18809999999939464ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.482Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.482Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.520Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.526Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 3.1971ms - processed 1 tasks (setup: 2.8123ms, parallel_planning: 376.6µs)
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 7.6301ms - processed 1 plans (setup: 229.1µs, hashing: 7.3991ms, assembly: 1.0298ms)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.538Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.538Z - Time taken for 'write cache' 5.626400000008289ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.538Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.538Z - Handled HASH_TASKS. Handling time: 18. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.569Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.569Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:24.569Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.105Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.105Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.106Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.106Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.113Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.113Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.114Z - Time taken for 'total for creating and serializing project graph' 7.540199999988545ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.114Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.114Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 7. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.120Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.120Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:30.121Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.511Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.511Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.511Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.536Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.536Z - Done responding to the client handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.536Z - Handled RECORD_TASK_RUNS. Handling time: 6. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.537Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.537Z - Done responding to the client handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.537Z - Handled GET_FLAKY_TASKS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.541Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.541Z - Time taken for 'postTasksExecution' 0.18449999998847488ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.541Z - Done responding to the client handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.541Z - Handled POST_TASKS_EXECUTION. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:01:35.544Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.404Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.405Z - [WATCHER]: libs/ui/src/Autocomplete/Autocomplete.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.514Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.514Z - [REQUEST]: libs/ui/src/Autocomplete/Autocomplete.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.514Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.516Z - Time taken for 'hash changed files from watcher' 0.2462999999988824ms
+Time for 'nx/core/project-json:createNodes' 0.6944000000075903
+Time for 'nx/core/package-json:createNodes' 2.942799999989802
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.259000000020023
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.531Z - Time taken for 'build-project-configs' 11.553599999984726ms
+Time for 'build typescript dependencies' 2.8888000000151806
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.550Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.551Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.551Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:25.551Z - Time taken for 'total execution time for createProjectGraph()' 21.431299999996554ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.041Z - [WATCHER]: libs/ui/src/Autocomplete/Autocomplete.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.042Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.243Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.243Z - [REQUEST]: libs/ui/src/Autocomplete/Autocomplete.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.243Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.245Z - Time taken for 'hash changed files from watcher' 0.17590000000200234ms
+Time for 'nx/core/project-json:createNodes' 0.5
+Time for 'nx/core/package-json:createNodes' 1.9728999999933876
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.879899999999907
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.258Z - Time taken for 'build-project-configs' 10.059599999978673ms
+Time for 'build typescript dependencies' 2.4741999999969266
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.274Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.275Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.275Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:26.275Z - Time taken for 'total execution time for createProjectGraph()' 17.95010000001639ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.056Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.056Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.057Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.057Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.077Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.077Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.078Z - Time taken for 'total for creating and serializing project graph' 20.743900000001304ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.078Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.078Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 20. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.082Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.082Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:03:37.082Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.640Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.640Z - [WATCHER]: apps/web/src/components/VoiceControls/VoiceControls.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.749Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.749Z - [REQUEST]: apps/web/src/components/VoiceControls/VoiceControls.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.749Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.751Z - Time taken for 'hash changed files from watcher' 0.2004999999771826ms
+Time for 'nx/core/project-json:createNodes' 0.48749999998835847
+Time for 'nx/core/package-json:createNodes' 1.8457000000053085
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.787499999976717
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.763Z - Time taken for 'build-project-configs' 9.166500000050291ms
+Time for 'build typescript dependencies' 2.1836999999941327
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.779Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.779Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.779Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:14.779Z - Time taken for 'total execution time for createProjectGraph()' 17.184799999988172ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.655Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.656Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.656Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.656Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.661Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.662Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.662Z - Time taken for 'total for creating and serializing project graph' 5.4118999999482185ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.662Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.662Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.666Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.666Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:07:25.666Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.355Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.356Z - [WATCHER]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.466Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.466Z - [REQUEST]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.466Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.468Z - Time taken for 'hash changed files from watcher' 0.23900000000139698ms
+Time for 'nx/core/project-json:createNodes' 0.9315000000060536
+Time for 'nx/core/package-json:createNodes' 3.3752000000094995
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.926999999966938
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.484Z - Time taken for 'build-project-configs' 12.372099999978673ms
+Time for 'build typescript dependencies' 4.050600000016857
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.505Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.505Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.505Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:16.506Z - Time taken for 'total execution time for createProjectGraph()' 23.48599999997532ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:18.983Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:18.984Z - [WATCHER]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.199Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.199Z - [REQUEST]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.199Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.201Z - Time taken for 'hash changed files from watcher' 0.2624000000068918ms
+Time for 'nx/core/project-json:createNodes' 0.6199999999953434
+Time for 'nx/core/package-json:createNodes' 2.247700000007171
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.525499999988824
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.222Z - Time taken for 'build-project-configs' 14.89269999996759ms
+Time for 'build typescript dependencies' 3.777299999957904
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.248Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.249Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.249Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:19.249Z - Time taken for 'total execution time for createProjectGraph()' 29.43520000000717ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:21.623Z - [WATCHER]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:21.623Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:21.700Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:21.700Z - [WATCHER]: apps/web/src/components/GenerationHistory/GenerationHistory.module.css was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.026Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.026Z - [REQUEST]: apps/web/src/components/GenerationHistory/GenerationHistory.tsx,apps/web/src/components/GenerationHistory/GenerationHistory.module.css
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.026Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.027Z - Time taken for 'hash changed files from watcher' 0.2412999999942258ms
+Time for 'nx/core/project-json:createNodes' 0.4649999999674037
+Time for 'nx/core/package-json:createNodes' 1.7227000000420958
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.764399999985471
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.038Z - Time taken for 'build-project-configs' 8.24880000000121ms
+Time for 'build typescript dependencies' 2.8836999999475665
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.056Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.056Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.056Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.056Z - Time taken for 'total execution time for createProjectGraph()' 19.039099999994505ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.257Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:22.258Z - [WATCHER]: apps/web/src/components/GenerationHistory/GenerationHistory.module.css was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.069Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.069Z - [REQUEST]: apps/web/src/components/GenerationHistory/GenerationHistory.module.css
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.069Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.071Z - Time taken for 'hash changed files from watcher' 0.17469999997410923ms
+Time for 'nx/core/project-json:createNodes' 0.4085000000195578
+Time for 'nx/core/package-json:createNodes' 1.7093999999924563
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.7700000000186265
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.082Z - Time taken for 'build-project-configs' 8.851800000004005ms
+Time for 'build typescript dependencies' 1.7326999999932013
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.098Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.098Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.098Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:23.098Z - Time taken for 'total execution time for createProjectGraph()' 17.14299999998184ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.271Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.271Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.272Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.272Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.277Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.277Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.278Z - Time taken for 'total for creating and serializing project graph' 5.4557999999960884ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.278Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.278Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 5. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.283Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.283Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:08:33.283Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.160Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.160Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.269Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.269Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.269Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.270Z - Time taken for 'hash changed files from watcher' 0.1959999999962747ms
+Time for 'nx/core/project-json:createNodes' 0.43650000006891787
+Time for 'nx/core/package-json:createNodes' 1.9002999999793246
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.17090000002645
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.284Z - Time taken for 'build-project-configs' 8.805300000007264ms
+Time for 'build typescript dependencies' 2.4721000000135973
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.300Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.301Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.301Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.301Z - Time taken for 'total execution time for createProjectGraph()' 18.913900000043213ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.888Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:15.888Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.089Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.089Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.089Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.092Z - Time taken for 'hash changed files from watcher' 0.1698999999789521ms
+Time for 'nx/core/project-json:createNodes' 0.5884000000078231
+Time for 'nx/core/package-json:createNodes' 1.9065999999875203
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.766999999992549
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.103Z - Time taken for 'build-project-configs' 8.241500000003725ms
+Time for 'build typescript dependencies' 1.6671999999089167
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.119Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.119Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.119Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.119Z - Time taken for 'total execution time for createProjectGraph()' 18.347999999998137ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.524Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.524Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.930Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.930Z - [REQUEST]: apps/api/src/silero-worker.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.930Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.932Z - Time taken for 'hash changed files from watcher' 0.19410000008065253ms
+Time for 'nx/core/project-json:createNodes' 0.6551999999210238
+Time for 'nx/core/package-json:createNodes' 1.9416999999666587
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.180600000079721
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.943Z - Time taken for 'build-project-configs' 9.154299999936484ms
+Time for 'build typescript dependencies' 2.276300000026822
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.959Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.960Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.960Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:16.960Z - Time taken for 'total execution time for createProjectGraph()' 17.514200000092387ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:17.706Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:17.707Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.516Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.516Z - [REQUEST]: apps/api/src/silero-worker.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.516Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.518Z - Time taken for 'hash changed files from watcher' 0.21950000000651926ms
+Time for 'nx/core/project-json:createNodes' 0.46450000000186265
+Time for 'nx/core/package-json:createNodes' 1.8226999999023974
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.979300000006333
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.531Z - Time taken for 'build-project-configs' 9.777999999932945ms
+Time for 'build typescript dependencies' 3.957300000009127
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.549Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.549Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.549Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.549Z - Time taken for 'total execution time for createProjectGraph()' 20.089700000011362ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.577Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:18.578Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:19.013Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:19.013Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:19.786Z - [WATCHER]: apps/api/src/main.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:19.786Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.188Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.188Z - [REQUEST]: apps/api/src/silero-worker.ts,apps/api/src/main.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.188Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.190Z - Time taken for 'hash changed files from watcher' 0.24580000003334135ms
+Time for 'nx/core/project-json:createNodes' 0.513899999903515
+Time for 'nx/core/package-json:createNodes' 1.971599999931641
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.818000000086613
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.201Z - Time taken for 'build-project-configs' 8.981300000101328ms
+Time for 'build typescript dependencies' 2.440800000098534
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.217Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.217Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.217Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:20.217Z - Time taken for 'total execution time for createProjectGraph()' 17.232999999891035ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.795Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.795Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.796Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.796Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.801Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.801Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.802Z - Time taken for 'total for creating and serializing project graph' 5.39559999993071ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.803Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.803Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 5. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.806Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.806Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:30.806Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.583Z - [WATCHER]: libs/shared/src/lib/voices.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.583Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.691Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.691Z - [REQUEST]: libs/shared/src/lib/voices.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.691Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.692Z - Time taken for 'hash changed files from watcher' 0.1635000000242144ms
+Time for 'nx/core/project-json:createNodes' 0.4411000000545755
+Time for 'nx/core/package-json:createNodes' 1.7864000000990927
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.3532999999588355
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.705Z - Time taken for 'build-project-configs' 9.912099999957718ms
+Time for 'build typescript dependencies' 2.1399000000674278
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.720Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.720Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.720Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:32.720Z - Time taken for 'total execution time for createProjectGraph()' 15.851199999917299ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.023Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.024Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.024Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.026Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.026Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.031Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.032Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.032Z - Time taken for 'total for creating and serializing project graph' 5.486499999999069ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.033Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.033Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.038Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.038Z - Time taken for 'preTasksExecution' 0.15139999997336417ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.038Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.038Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.067Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.071Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 2.4311ms - processed 1 tasks (setup: 2.3135ms, parallel_planning: 111.4µs)
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "7212375146203297501" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "9818427235281776710"
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 4.0058ms - processed 1 plans (setup: 221.9µs, hashing: 3.7797ms, assembly: 509.3µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.084Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.084Z - Time taken for 'write cache' 4.596599999931641ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.084Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.084Z - Handled HASH_TASKS. Handling time: 18. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.101Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.101Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.101Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:42.692Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.611Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.611Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.612Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.613Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.620Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.620Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.621Z - Time taken for 'total for creating and serializing project graph' 7.8351000000257045ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.622Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.622Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 8. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.630Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.630Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:43.630Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.023Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.023Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.023Z - Handled RECORD_OUTPUTS_HASH. Handling time: 4. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.040Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.091Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.091Z - Done responding to the client handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.091Z - Handled RECORD_TASK_RUNS. Handling time: 5. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.093Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.093Z - Done responding to the client handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.093Z - Handled GET_FLAKY_TASKS. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.096Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.096Z - Time taken for 'postTasksExecution' 0.1404999999795109ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.096Z - Done responding to the client handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.096Z - Handled POST_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.099Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.399Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.399Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.400Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.401Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.402Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.428Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.428Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.429Z - Time taken for 'total for creating and serializing project graph' 26.552299999981187ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.430Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.430Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 27. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.435Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.435Z - Time taken for 'preTasksExecution' 0.1665999999968335ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.435Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.435Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.464Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.469Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 3.0249ms - processed 1 tasks (setup: 2.6413ms, parallel_planning: 377.7µs)
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 6.5008ms - processed 1 plans (setup: 225.4µs, hashing: 6.2733ms, assembly: 853.7µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.480Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.480Z - Time taken for 'write cache' 5.054000000003725ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.480Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.480Z - Handled HASH_TASKS. Handling time: 16. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.505Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.505Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:44.505Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.191Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.284Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.284Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.284Z - Handled RECORD_OUTPUTS_HASH. Handling time: 4. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.286Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.333Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.334Z - Done responding to the client handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.334Z - Handled RECORD_TASK_RUNS. Handling time: 5. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.335Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.335Z - Done responding to the client handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.335Z - Handled GET_FLAKY_TASKS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.339Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.339Z - Time taken for 'postTasksExecution' 0.15049999998882413ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.339Z - Done responding to the client handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.339Z - Handled POST_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:10:47.342Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.628Z - [WATCHER]: apps/api/python/test_privet.wav was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.628Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.739Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.739Z - [REQUEST]: apps/api/python/test_privet.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.739Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.741Z - Time taken for 'hash changed files from watcher' 1.877100000041537ms
+Time for 'nx/core/project-json:createNodes' 0.4405999999726191
+Time for 'nx/core/package-json:createNodes' 1.7854000000515953
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.629399999976158
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.754Z - Time taken for 'build-project-configs' 9.414600000018254ms
+Time for 'build typescript dependencies' 1.6611000000266358
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.770Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.770Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.770Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:12.771Z - Time taken for 'total execution time for createProjectGraph()' 18.09279999998398ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.641Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.641Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.641Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.642Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.663Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.663Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.663Z - Time taken for 'total for creating and serializing project graph' 21.222500000032596ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.663Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.663Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 22. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.666Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.667Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:23.667Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.218Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.235Z - [WATCHER]: apps/api/python/requirements.txt was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.342Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.342Z - [REQUEST]: apps/api/python/requirements.txt
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.342Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.344Z - Time taken for 'hash changed files from watcher' 0.18880000000353903ms
+Time for 'nx/core/project-json:createNodes' 0.4568000000435859
+Time for 'nx/core/package-json:createNodes' 1.7245000000111759
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.76589999999851
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.356Z - Time taken for 'build-project-configs' 9.199199999915436ms
+Time for 'build typescript dependencies' 1.8273999999510124
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.372Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.372Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.372Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:34.372Z - Time taken for 'total execution time for createProjectGraph()' 17.76390000001993ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:36.824Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:36.824Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.027Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.027Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.027Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.032Z - Time taken for 'hash changed files from watcher' 0.35190000000875443ms
+Time for 'nx/core/project-json:createNodes' 0.7466999999014661
+Time for 'nx/core/package-json:createNodes' 2.9552000000840053
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.967499999911524
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.048Z - Time taken for 'build-project-configs' 14.193599999998696ms
+Time for 'build typescript dependencies' 2.728400000021793
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.068Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.068Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.068Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:37.068Z - Time taken for 'total execution time for createProjectGraph()' 21.67409999994561ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:38.884Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:38.884Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.290Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.290Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.290Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.292Z - Time taken for 'hash changed files from watcher' 0.18290000001434237ms
+Time for 'nx/core/project-json:createNodes' 0.41059999994467944
+Time for 'nx/core/package-json:createNodes' 1.706199999898672
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.899699999950826
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.303Z - Time taken for 'build-project-configs' 8.348400000017136ms
+Time for 'build typescript dependencies' 1.6563999999780208
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.318Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.318Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.318Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:39.319Z - Time taken for 'total execution time for createProjectGraph()' 16.993000000016764ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.162Z - [WATCHER]: apps/web/src/components/TtsInput/TtsInput.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.163Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.408Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.409Z - [WATCHER]: apps/api/python/test_privet.wav was deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.967Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.967Z - [REQUEST]: apps/web/src/components/TtsInput/TtsInput.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.967Z - [REQUEST]: apps/api/python/test_privet.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.969Z - Time taken for 'hash changed files from watcher' 0.20759999996516854ms
+Time for 'nx/core/project-json:createNodes' 0.4254000000655651
+Time for 'nx/core/package-json:createNodes' 1.668100000009872
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.447900000028312
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.981Z - Time taken for 'build-project-configs' 9.117700000060722ms
+Time for 'build typescript dependencies' 2.7244999998947605
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.996Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.996Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.996Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:40.996Z - Time taken for 'total execution time for createProjectGraph()' 16.477199999964796ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:46.092Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.430Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.430Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.431Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.431Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.437Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.437Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.438Z - Time taken for 'total for creating and serializing project graph' 6.15210000006482ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.439Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.439Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.443Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.443Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:12:51.443Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.438Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.438Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.545Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.545Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.545Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.547Z - Time taken for 'hash changed files from watcher' 0.19150000007357448ms
+Time for 'nx/core/project-json:createNodes' 0.5731999999843538
+Time for 'nx/core/package-json:createNodes' 1.7895000000717118
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.077599999960512
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.560Z - Time taken for 'build-project-configs' 9.66039999993518ms
+Time for 'build typescript dependencies' 2.3395000000018626
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.575Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.575Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.575Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:07.575Z - Time taken for 'total execution time for createProjectGraph()' 16.63980000000447ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:08.882Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:08.883Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.097Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.097Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.097Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.099Z - Time taken for 'hash changed files from watcher' 0.1632000000681728ms
+Time for 'nx/core/project-json:createNodes' 0.4320000000298023
+Time for 'nx/core/package-json:createNodes' 1.6768000000156462
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.317099999985658
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.111Z - Time taken for 'build-project-configs' 8.967299999902025ms
+Time for 'build typescript dependencies' 1.7907999999588355
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.126Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.126Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.126Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:09.126Z - Time taken for 'total execution time for createProjectGraph()' 17.31160000001546ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.433Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.433Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.843Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.843Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.843Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.844Z - Time taken for 'hash changed files from watcher' 0.16739999991841614ms
+Time for 'nx/core/project-json:createNodes' 0.42269999999552965
+Time for 'nx/core/package-json:createNodes' 1.973399999900721
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.808999999891967
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.855Z - Time taken for 'build-project-configs' 8.061099999933504ms
+Time for 'build typescript dependencies' 1.9642999999923632
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.871Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.872Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.872Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:10.872Z - Time taken for 'total execution time for createProjectGraph()' 18.08049999992363ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:12.768Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:12.769Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.582Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.582Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.582Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.583Z - Time taken for 'hash changed files from watcher' 0.22089999995660037ms
+Time for 'nx/core/project-json:createNodes' 0.47109999996609986
+Time for 'nx/core/package-json:createNodes' 1.6282999999821186
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.422399999923073
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.595Z - Time taken for 'build-project-configs' 8.914400000008754ms
+Time for 'build typescript dependencies' 2.065599999972619
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.608Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.609Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.609Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:13.609Z - Time taken for 'total execution time for createProjectGraph()' 15.066899999976158ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:14.312Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:14.313Z - [WATCHER]: apps/web/src/components/TtsInput/TtsInput.tsx was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.915Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.915Z - [REQUEST]: apps/web/src/components/TtsInput/TtsInput.tsx
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.915Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.917Z - Time taken for 'hash changed files from watcher' 0.1909999999916181ms
+Time for 'nx/core/project-json:createNodes' 0.5091000000247732
+Time for 'nx/core/package-json:createNodes' 1.8429999999934807
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.630200000014156
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.932Z - Time taken for 'build-project-configs' 11.123299999977462ms
+Time for 'build typescript dependencies' 2.0100000000093132
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.948Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.948Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.948Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:15.948Z - Time taken for 'total execution time for createProjectGraph()' 19.470300000044517ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:18.674Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.324Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.325Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.325Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.326Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.331Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.331Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.331Z - Time taken for 'total for creating and serializing project graph' 5.136900000041351ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.331Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.331Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.335Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.335Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:25.335Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.332Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.332Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.332Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.333Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.333Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.333Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:58.371Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.821Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.822Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.822Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.824Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.825Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.830Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.830Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.830Z - Time taken for 'total for creating and serializing project graph' 5.605699999956414ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.831Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.831Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.837Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.837Z - Time taken for 'preTasksExecution' 0.15350000001490116ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.837Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.837Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.868Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.873Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 34.097ms - processed 2 tasks (setup: 2.3602ms, parallel_planning: 31.7325ms)
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "7212375146203297501" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "9818427235281776710"
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "7212375146203297501" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "9818427235281776710"
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 5.8354ms - processed 2 plans (setup: 217.2µs, hashing: 5.6164ms, assembly: 728.8µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.920Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.920Z - Time taken for 'write cache' 5.005500000086613ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.920Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.920Z - Handled HASH_TASKS. Handling time: 52. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.945Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.945Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:14:59.945Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.233Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.234Z - [WATCHER]: package.json was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.342Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.342Z - [REQUEST]: package.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.342Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.344Z - Time taken for 'hash changed files from watcher' 0.24080000002868474ms
+Time for 'nx/core/project-json:createNodes' 0.4756999999517575
+Time for 'nx/core/package-json:createNodes' 2.2162999999709427
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.797299999976531
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.358Z - Time taken for 'build-project-configs' 10.274600000004284ms
+Time for 'build typescript dependencies' 0.0276999999769032
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.371Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.372Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.372Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:51.372Z - Time taken for 'total execution time for createProjectGraph()' 15.473200000007637ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.245Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.245Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.246Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.246Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.251Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.251Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.252Z - Time taken for 'total for creating and serializing project graph' 5.657099999953061ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.252Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.252Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 5. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.256Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.256Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:52.256Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.452Z - [WATCHER]: apps/web/src/api/tts.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.452Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.560Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.560Z - [REQUEST]: apps/web/src/api/tts.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.560Z - [REQUEST]: 
+Time for 'nx/core/project-json:createNodes' 0.47160000004805624
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.562Z - Time taken for 'hash changed files from watcher' 0.22659999993629754ms
+Time for 'nx/core/package-json:createNodes' 1.8389000000897795
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.736399999936111
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.578Z - Time taken for 'build-project-configs' 11.803000000072643ms
+Time for 'build typescript dependencies' 2.692600000067614
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.598Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.599Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.599Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:53.599Z - Time taken for 'total execution time for createProjectGraph()' 23.658900000038557ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.384Z - [WATCHER]: apps/web/src/api/tts.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.385Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.598Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.598Z - [REQUEST]: apps/web/src/api/tts.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.598Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.599Z - Time taken for 'hash changed files from watcher' 0.17909999995026737ms
+Time for 'nx/core/project-json:createNodes' 0.6611999999731779
+Time for 'nx/core/package-json:createNodes' 1.89179999998305
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.648099999991246
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.612Z - Time taken for 'build-project-configs' 10.050900000031106ms
+Time for 'build typescript dependencies' 2.8808999999891967
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.628Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.628Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.628Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:15:54.628Z - Time taken for 'total execution time for createProjectGraph()' 17.301199999987148ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.401Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.402Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.402Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.402Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.407Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.407Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.408Z - Time taken for 'total for creating and serializing project graph' 5.109399999957532ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.408Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.408Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 5. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.411Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.411Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:05.411Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.090Z - [WATCHER]: test_api.wav was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.091Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.198Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.198Z - [REQUEST]: test_api.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.198Z - [REQUEST]: 
+Time for 'nx/core/project-json:createNodes' 0.7871000000741333
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.202Z - Time taken for 'hash changed files from watcher' 2.2118999999947846ms
+Time for 'nx/core/package-json:createNodes' 2.535299999988638
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 9.961499999975786
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.220Z - Time taken for 'build-project-configs' 16.920899999910034ms
+Time for 'build typescript dependencies' 0.025800000061281025
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.239Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.240Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.240Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:16:57.240Z - Time taken for 'total execution time for createProjectGraph()' 20.91039999993518ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.109Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.110Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.111Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.111Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.119Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.119Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.120Z - Time taken for 'total for creating and serializing project graph' 8.508799999952316ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.120Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.120Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 8. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.124Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.124Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:08.124Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.873Z - [WATCHER]: latest_silero_models.yml.013c8c3720e64c37818c458138d18655.partial was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.873Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.982Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.982Z - [REQUEST]: latest_silero_models.yml.013c8c3720e64c37818c458138d18655.partial
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.982Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:42.984Z - Time taken for 'hash changed files from watcher' 0.6651999999303371ms
+Time for 'nx/core/project-json:createNodes' 0.6078000001143664
+Time for 'nx/core/package-json:createNodes' 2.982399999862537
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.294400000013411
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.000Z - Time taken for 'build-project-configs' 12.470800000010058ms
+Time for 'build typescript dependencies' 0.12089999997988343
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.018Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.018Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.018Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.019Z - Time taken for 'total execution time for createProjectGraph()' 18.97289999993518ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.184Z - [WATCHER]: 1 file(s) created or restored, 0 file(s) modified, 1 file(s) deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.185Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.301Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.301Z - [REQUEST]: latest_silero_models.yml
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.301Z - [REQUEST]: latest_silero_models.yml.013c8c3720e64c37818c458138d18655.partial
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.303Z - Time taken for 'hash changed files from watcher' 6.579400000162423ms
+Time for 'nx/core/project-json:createNodes' 0.499599999981001
+Time for 'nx/core/package-json:createNodes' 1.8074000000488013
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 7.29839999997057
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.318Z - Time taken for 'build-project-configs' 11.748600000049919ms
+Time for 'build typescript dependencies' 0.020099999848753214
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.331Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.332Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.332Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:43.332Z - Time taken for 'total execution time for createProjectGraph()' 15.53000000002794ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.202Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.203Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.203Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.204Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.209Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.209Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.210Z - Time taken for 'total for creating and serializing project graph' 5.639899999834597ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.210Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.210Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.213Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.213Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:17:54.213Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.044Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.044Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.111Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.112Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.112Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (sources)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.112Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.112Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.112Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (outputs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:55.113Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.903Z - Started listening on: \\.\pipe\nx\C:\Users\smilw\AppData\Local\Temp\e6ad827f1d5f667ae264\d.sock
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.904Z - [WATCHER]: Subscribed to changes within: e:\Work\Projects\siero-tts (native)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.905Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.907Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.929Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.929Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.929Z - Established a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.930Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:58.957Z - Time taken for 'loadSpecifiedNxPlugins' 1.4565000000000055ms
+Time for 'plugin worker 31428 code loading' 3.796199999999999
+Time for 'plugin worker 14864 code loading' 5.022099999999998
+Time for 'plugin worker 43396 code loading' 4.0451000000000015
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.189Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\package-json' 256.50120000000004ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.205Z - Time taken for 'Load Nx Plugin: e:\Work\Projects\siero-tts\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 272.4656ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.226Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.226Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.226Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.227Z - No files changed, but no in-memory cached project graph found. Recomputing it...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.231Z - Time taken for 'loadDefaultNxPlugins' 294.18449999999996ms
+Time for 'nx/core/project-json:createNodes' 0.8378000000000156
+Time for 'nx/core/package-json:createNodes' 5.153099999999995
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.996700000000033
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.261Z - Time taken for 'build-project-configs' 17.607599999999934ms
+Time for 'build typescript dependencies' 0.1711999999999989
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.279Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.286Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.286Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.287Z - Time taken for 'total for creating and serializing project graph' 355.57399999999996ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.287Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.287Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 356. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.291Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.291Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:18:59.291Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.628Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.629Z - [WATCHER]: apps/api/python/worker.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.739Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.739Z - [REQUEST]: apps/api/python/worker.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.739Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.742Z - Time taken for 'hash changed files from watcher' 0.24470000000292202ms
+Time for 'nx/core/project-json:createNodes' 0.9929000000047381
+Time for 'nx/core/package-json:createNodes' 3.023699999997916
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.6023000000059255
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.758Z - Time taken for 'build-project-configs' 11.957900000001246ms
+Time for 'build typescript dependencies' 16.36229999999341
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.790Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.791Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.791Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:41.791Z - Time taken for 'total execution time for createProjectGraph()' 35.82990000000427ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.183Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.183Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.399Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.399Z - [REQUEST]: apps/api/src/silero-worker.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.399Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.402Z - Time taken for 'hash changed files from watcher' 0.2842000000018743ms
+Time for 'nx/core/project-json:createNodes' 0.66990000000078
+Time for 'nx/core/package-json:createNodes' 3.2164000000047963
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.627200000002631
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.416Z - Time taken for 'build-project-configs' 10.632599999997183ms
+Time for 'build typescript dependencies' 4.0380999999979394
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.437Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.438Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.438Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.438Z - Time taken for 'total execution time for createProjectGraph()' 24.244800000000396ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.817Z - [WATCHER]: apps/api/src/silero-worker.ts was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:43.817Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.225Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.225Z - [REQUEST]: apps/api/src/silero-worker.ts
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.225Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.230Z - Time taken for 'hash changed files from watcher' 0.4187999999994645ms
+Time for 'nx/core/project-json:createNodes' 0.9372000000003027
+Time for 'nx/core/package-json:createNodes' 3.867599999997765
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 10.440300000002026
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.250Z - Time taken for 'build-project-configs' 16.794999999998254ms
+Time for 'build typescript dependencies' 2.8473999999987427
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.268Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.268Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.268Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:44.268Z - Time taken for 'total execution time for createProjectGraph()' 21.678700000004028ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:51.858Z - [WATCHER]: apps/api/python/test_pipeline.py was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:51.859Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.664Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.664Z - [REQUEST]: apps/api/python/test_pipeline.py
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.664Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.666Z - Time taken for 'hash changed files from watcher' 0.18940000000293367ms
+Time for 'nx/core/project-json:createNodes' 0.500899999999092
+Time for 'nx/core/package-json:createNodes' 1.9069000000017695
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.099200000004203
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.678Z - Time taken for 'build-project-configs' 8.800999999999476ms
+Time for 'build typescript dependencies' 1.5874000000039814
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.693Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.694Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.694Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:52.694Z - Time taken for 'total execution time for createProjectGraph()' 17.42199999999866ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:59.814Z - [WATCHER]: apps/api/python/test_direct.wav was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:19:59.814Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.417Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.417Z - [REQUEST]: apps/api/python/test_direct.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.417Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.419Z - Time taken for 'hash changed files from watcher' 2.584100000000035ms
+Time for 'nx/core/project-json:createNodes' 0.47039999999833526
+Time for 'nx/core/package-json:createNodes' 1.916799999999057
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 4.823499999998603
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.433Z - Time taken for 'build-project-configs' 8.894899999999325ms
+Time for 'build typescript dependencies' 1.7678000000014435
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.450Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.451Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.451Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:01.451Z - Time taken for 'total execution time for createProjectGraph()' 20.856999999996333ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:03.560Z - [WATCHER]: apps/api/python/test_worker.wav was modified
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:03.560Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.775Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.775Z - [REQUEST]: apps/api/python/test_worker.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.775Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.776Z - Time taken for 'hash changed files from watcher' 0.27899999999499414ms
+Time for 'nx/core/project-json:createNodes' 0.7520000000076834
+Time for 'nx/core/package-json:createNodes' 3.029899999994086
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 6.179300000003423
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.791Z - Time taken for 'build-project-configs' 11.283100000000559ms
+Time for 'build typescript dependencies' 1.8940000000002328
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.812Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.812Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.812Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:06.813Z - Time taken for 'total execution time for createProjectGraph()' 22.25689999999304ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.579Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.580Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.581Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.581Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.599Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.599Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.600Z - Time taken for 'total for creating and serializing project graph' 17.952200000014273ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.600Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.600Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 18. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.605Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.605Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:20:14.605Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.962Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.963Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.963Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.965Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.965Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:13.965Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:22:14.043Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:13.270Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.759Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.759Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 3 file(s) deleted
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.866Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.866Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.866Z - [REQUEST]: apps/api/python/test_direct.wav,apps/api/python/test_worker.wav,test_api.wav
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.868Z - Time taken for 'hash changed files from watcher' 0.15499999996973202ms
+Time for 'nx/core/project-json:createNodes' 0.6399000000092201
+Time for 'nx/core/package-json:createNodes' 2.7714000000269152
+Time for 'nx/js/dependencies-and-lockfile:createNodes' 5.809399999969173
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.882Z - Time taken for 'build-project-configs' 10.364500000025146ms
+Time for 'build typescript dependencies' 0.029399999999441206
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.896Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.897Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.897Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:32.897Z - Time taken for 'total execution time for createProjectGraph()' 16.62400000001071ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.506Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.507Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.507Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.509Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.509Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.515Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.515Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.516Z - Time taken for 'total for creating and serializing project graph' 6.347200000018347ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.517Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.517Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 2.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.524Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.525Z - Time taken for 'preTasksExecution' 0.8254000000306405ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.525Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.525Z - Handled PRE_TASKS_EXECUTION. Handling time: 1. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.568Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.577Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 3.7334ms - processed 1 tasks (setup: 3.5309ms, parallel_planning: 196.3µs)
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "11688401206525180159" (".gitignore") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Adding "7212375146203297501" ("nx.json") to hash
+DEBUG nx::native::tasks::hashers::hash_workspace_files: Hashing workspace fileset{cache_key="nx.json,.gitignore,.nxignore"}: Hash Value: "9818427235281776710"
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 5.6745ms - processed 1 plans (setup: 286.8µs, hashing: 5.3838ms, assembly: 790µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.596Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.596Z - Time taken for 'write cache' 9.020900000003166ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.596Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.596Z - Handled HASH_TASKS. Handling time: 28. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.650Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.651Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:33.651Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 7. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:34.320Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.557Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.557Z - Done responding to the client recordOutputsHash
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.557Z - Handled RECORD_OUTPUTS_HASH. Handling time: 7. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.558Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.617Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.617Z - Done responding to the client handleRecordTaskRuns
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.617Z - Handled RECORD_TASK_RUNS. Handling time: 5. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.618Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.618Z - Done responding to the client handleGetFlakyTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.618Z - Handled GET_FLAKY_TASKS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.622Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.622Z - Time taken for 'postTasksExecution' 0.24190000002272427ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.622Z - Done responding to the client handleRunPostTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.622Z - Handled POST_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:35.627Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.786Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.787Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.788Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.788Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.794Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.794Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.795Z - Time taken for 'total for creating and serializing project graph' 6.805300000007264ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.795Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.795Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.799Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.799Z - Done responding to the client handleContextFileData
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:25:43.799Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.818Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.818Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.819Z - Established a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.821Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.821Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.827Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.827Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.828Z - Time taken for 'total for creating and serializing project graph' 6.247999999963213ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.828Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.828Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.833Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.833Z - Time taken for 'preTasksExecution' 0.14809999999124557ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.833Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.833Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.859Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.864Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 2.5974ms - processed 1 tasks (setup: 2.5643ms, parallel_planning: 27.5µs)
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 1.6127ms - processed 1 plans (setup: 180.5µs, hashing: 1.4302ms, assembly: 102.7µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.868Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.869Z - Time taken for 'write cache' 5.1081000000122ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.869Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.869Z - Handled HASH_TASKS. Handling time: 10. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.913Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.913Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:17.913Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.591Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.592Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.593Z - Established a connection. Number of open connections: 3
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.595Z - [REQUEST]: Client Request for Project Graph Received
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.595Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.601Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.601Z - [REQUEST]: Responding to the client. project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.601Z - Time taken for 'total for creating and serializing project graph' 5.885199999960605ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.602Z - Done responding to the client project-graph
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.602Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 6. Response time: 1.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.607Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.607Z - Time taken for 'preTasksExecution' 0.14380000001983717ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.607Z - Done responding to the client handleRunPreTasksExecution
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.607Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.633Z - Reusing in-memory cached project graph because no files changed.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.639Z - Wrote project graph cache to e:\Work\Projects\siero-tts\.nx\workspace-data\project-graph.json
+DEBUG nx::native::tasks::hash_planner: get_plans_internal COMPLETED in 2.8456ms - processed 1 tasks (setup: 2.5253ms, parallel_planning: 315.2µs)
+DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 4.8054ms - processed 1 plans (setup: 187.1µs, hashing: 4.6166ms, assembly: 626.9µs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.648Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.648Z - Time taken for 'write cache' 5.513299999991432ms
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.648Z - Done responding to the client handleHashTasks
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:21.648Z - Handled HASH_TASKS. Handling time: 15. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:22.056Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:22.056Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v21.6.11 Daemon Server] - 2026-09-02T01:26:22.056Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 1. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.399Z - Closed a connection. Number of open connections: 2
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.399Z - Closed a connection. Number of open connections: 1
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.399Z - Closed a connection. Number of open connections: 0
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.427Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (sources)
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.428Z - [WATCHER]: Stopping the watcher for e:\Work\Projects\siero-tts (outputs)
+[NX v21.6.11 Daemon Server] - 2026-09-02T08:00:48.429Z - Server stopped because: "10800000ms of inactivity"

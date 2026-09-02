@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/apps/web",
+    "module": "commonjs",
+    "types": ["jest", "node"]
+  },
+  "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "jest.config.ts"]
+}

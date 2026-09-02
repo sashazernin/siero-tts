@@ -1,0 +1,13 @@
+.paper {
+  background: var(--color-bg-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.elevation1 {
+  box-shadow: var(--shadow-1);
+}
+
+.elevation2 {
+  box-shadow: var(--shadow-2);
+}

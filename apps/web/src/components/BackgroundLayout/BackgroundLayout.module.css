@@ -1,0 +1,21 @@
+.layout {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.12), transparent 30%),
+    linear-gradient(160deg, #0a0a0f 0%, #12121a 45%, #1a1a2e 100%);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}

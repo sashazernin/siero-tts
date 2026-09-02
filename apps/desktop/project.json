@@ -1,0 +1,24 @@
+{
+  "name": "desktop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/desktop/src",
+  "projectType": "application",
+  "tags": ["scope:desktop", "type:app"],
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron apps/desktop/src/main.js",
+        "cwd": "."
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["web:build", "api:build"],
+      "options": {
+        "command": "electron-builder --config electron-builder.json",
+        "cwd": "."
+      }
+    }
+  }
+}

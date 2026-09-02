@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "outDir": "../../dist/out-tsc/libs/ui"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

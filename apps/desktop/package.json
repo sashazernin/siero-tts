@@ -1,0 +1,6 @@
+{
+  "name": "desktop",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/main.js"
+}

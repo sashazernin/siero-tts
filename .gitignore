@@ -2,14 +2,19 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
 
 # production
+/dist
+/dist_electron
 /build
+/coverage
+/tmp
+.deps
+.nx/cache
+
+# python
+apps/api/python/__pycache__/
+**/__pycache__/
 
 # misc
 .DS_Store
