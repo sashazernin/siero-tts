@@ -4,7 +4,7 @@ import json
 import re
 import sys
 import wave
-from typing import Literal
+from typing import Any, Literal
 
 import numpy as np
 import torch
@@ -17,8 +17,12 @@ if hasattr(sys.stdin, "buffer"):
 if hasattr(sys.stdout, "buffer"):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", write_through=True)
 
-MODEL_ID = "v5_cis_base_nostress"
 DEFAULT_SAMPLE_RATE = 48000
+MODEL_CONFIG: dict[str, dict[str, str | bool]] = {
+    "v5_cis_base_nostress": {"language": "ru", "eager": True},
+    "v3_en": {"language": "en", "eager": False},
+    "v5_ru": {"language": "ru", "eager": False},
+}
 STRESS_LANGUAGE_BY_PREFIX = {
     "ru": "ru",
     "bel": "bel",
@@ -26,15 +30,17 @@ STRESS_LANGUAGE_BY_PREFIX = {
 }
 CYRILLIC_SPEAKER_PREFIXES = frozenset(STRESS_LANGUAGE_BY_PREFIX.keys())
 CYRILLIC_TEXT_RE = re.compile(r"[\u0400-\u04FF]")
+LATIN_TEXT_RE = re.compile(r"[A-Za-z]")
 LANGUAGE_HINTS = {
     "ru": "русском",
     "bel": "белорусском",
     "ukr": "украинском",
 }
 
-model = None
 device = torch.device("cpu")
+models: dict[str, Any] = {}
 accentors: dict[str, object] = {}
+speaker_to_model: dict[str, str] = {}
 
 
 def get_stress_language(speaker: str) -> str | None:
@@ -62,10 +68,25 @@ def add_stress(text: str, speaker: str) -> str:
     return accentor(text)
 
 
-def validate_text(text: str, speaker: str) -> None:
-    prefix = speaker.split("_", 1)[0]
+def validate_text(text: str, speaker: str, model_id: str) -> None:
     normalized_text = text.replace("+", "")
 
+    if model_id == "v3_en":
+        if not LATIN_TEXT_RE.search(normalized_text):
+            raise ValueError(
+                "Английский голос озвучивает только латиницу. Введите текст на английском."
+            )
+        return
+
+    if model_id == "v5_ru":
+        if not CYRILLIC_TEXT_RE.search(normalized_text):
+            raise ValueError(
+                "Классический русский голос озвучивает только кириллицу. "
+                "Введите текст на русском."
+            )
+        return
+
+    prefix = speaker.split("_", 1)[0]
     if prefix in CYRILLIC_SPEAKER_PREFIXES and not CYRILLIC_TEXT_RE.search(normalized_text):
         language_hint = LANGUAGE_HINTS.get(prefix, prefix)
         raise ValueError(
@@ -92,24 +113,66 @@ def tensor_to_wav_bytes(audio_tensor: torch.Tensor, sample_rate: int) -> bytes:
     return buffer.getvalue()
 
 
-def load_model() -> list[str]:
-    global model
+def load_model(model_id: str) -> Any:
+    if model_id in models:
+        return models[model_id]
 
-    torch.set_num_threads(4)
-    loaded_model, _ = silero_tts(language="ru", speaker=MODEL_ID)
+    config = MODEL_CONFIG.get(model_id)
+    if config is None:
+        raise ValueError(f"Unknown model '{model_id}'")
+
+    language = str(config["language"])
+    loaded_model, _ = silero_tts(language=language, speaker=model_id)
     loaded_model.to(device)
-    model = loaded_model
-    return sorted(model.speakers)
+    models[model_id] = loaded_model
+
+    for speaker in loaded_model.speakers:
+        speaker_to_model[speaker] = model_id
+
+    write_message({"event": "model_loaded", "model": model_id, "speakers": sorted(loaded_model.speakers)})
+    return loaded_model
 
 
-def synthesize(text: str, speaker: str, sample_rate: Literal[8000, 24000, 48000]) -> bytes:
-    if model is None:
-        raise RuntimeError("Model is not loaded")
+def load_initial_models() -> dict[str, list[str]]:
+    loaded: dict[str, list[str]] = {}
 
-    validate_text(text, speaker)
-    prepared_text = add_stress(text, speaker)
+    for model_id, config in MODEL_CONFIG.items():
+        if not config.get("eager"):
+            continue
 
-    try:
+        model = load_model(model_id)
+        loaded[model_id] = sorted(model.speakers)
+
+    return loaded
+
+
+def resolve_model_id(model_id: str | None, speaker: str) -> str:
+    if model_id:
+        if model_id not in MODEL_CONFIG:
+            raise ValueError(f"Unknown model '{model_id}'")
+        return model_id
+
+    known_model = speaker_to_model.get(speaker)
+    if known_model:
+        return known_model
+
+    raise ValueError(f"Unknown speaker '{speaker}'. Specify model explicitly.")
+
+
+def synthesize(
+    text: str,
+    speaker: str,
+    sample_rate: Literal[8000, 24000, 48000],
+    model_id: str,
+) -> bytes:
+    model = load_model(model_id)
+    if speaker not in model.speakers:
+        raise ValueError(f"Speaker '{speaker}' is not available in model '{model_id}'")
+
+    validate_text(text, speaker, model_id)
+
+    if model_id == "v5_cis_base_nostress":
+        prepared_text = add_stress(text, speaker)
         audio = model.apply_tts(
             text=prepared_text,
             speaker=speaker,
@@ -119,14 +182,12 @@ def synthesize(text: str, speaker: str, sample_rate: Literal[8000, 24000, 48000]
             put_stress_homo=False,
             put_yo_homo=False,
         )
-    except ValueError as exc:
-        if str(exc).strip():
-            raise
-
-        raise ValueError(
-            "Текст не подходит для выбранного голоса. "
-            "Проверьте алфавит и язык текста."
-        ) from exc
+    else:
+        audio = model.apply_tts(
+            text=text,
+            speaker=speaker,
+            sample_rate=sample_rate,
+        )
 
     return tensor_to_wav_bytes(audio, sample_rate)
 
@@ -137,9 +198,10 @@ def write_message(payload: dict) -> None:
 
 
 def main() -> None:
-    speakers = load_model()
+    torch.set_num_threads(4)
+    loaded_models = load_initial_models()
     preload_accentors()
-    write_message({"event": "ready", "model": MODEL_ID, "speakers": speakers})
+    write_message({"event": "ready", "models": loaded_models})
 
     for line in sys.stdin:
         line = line.strip()
@@ -153,7 +215,7 @@ def main() -> None:
             command = payload.get("command")
 
             if command == "ping":
-                write_message({"id": request_id, "ok": True, "ready": model is not None})
+                write_message({"id": request_id, "ok": True, "ready": bool(models)})
                 continue
 
             if command != "synthesize":
@@ -162,13 +224,14 @@ def main() -> None:
 
             text = str(payload.get("text", "")).strip()
             speaker = str(payload.get("speaker", ""))
+            model_id = resolve_model_id(payload.get("model"), speaker)
             sample_rate = int(payload.get("sample_rate", DEFAULT_SAMPLE_RATE))
 
             if not text:
                 write_message({"id": request_id, "ok": False, "error": "Text is empty"})
                 continue
 
-            wav_bytes = synthesize(text, speaker, sample_rate)
+            wav_bytes = synthesize(text, speaker, sample_rate, model_id)
             write_message(
                 {
                     "id": request_id,

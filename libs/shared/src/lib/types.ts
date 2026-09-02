@@ -1,3 +1,5 @@
+import type { ModelId } from './models';
+
 export type Gender = 'male' | 'female';
 
 export type GenderFilter = 'any' | Gender;
@@ -9,7 +11,9 @@ export interface Voice {
   label: string;
   language: string;
   languageLabel: string;
-  gender: Gender;
+  gender?: Gender;
+  modelId: ModelId;
+  commercialAllowed: boolean;
 }
 
 export interface LanguageOption {
@@ -29,7 +33,8 @@ export interface GenerationItem {
 export interface TtsRequest {
   text: string;
   speaker: string;
+  model: ModelId;
   sample_rate?: 8000 | 24000 | 48000;
 }
 
-export const MODEL_ID = 'v5_cis_base_nostress';
+export { DEFAULT_MODEL_ID as MODEL_ID } from './models';

@@ -62,6 +62,7 @@ export async function synthesizeSpeech(request: TtsRequest): Promise<Blob> {
     body: JSON.stringify({
       text: request.text,
       speaker: request.speaker,
+      model: request.model,
       sample_rate: request.sample_rate ?? 48000,
     }),
   });

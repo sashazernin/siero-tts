@@ -6,6 +6,7 @@ const http = require('http');
 const BACKEND_PORT = 8000;
 const BACKEND_URL = `http://127.0.0.1:${BACKEND_PORT}`;
 const isDev = !app.isPackaged;
+const APP_ICON = path.join(__dirname, '..', 'assets', 'icon.ico');
 
 let mainWindow = null;
 let backendProcess = null;
@@ -92,6 +93,8 @@ async function createWindow() {
     height: 900,
     minWidth: 900,
     minHeight: 700,
+    icon: APP_ICON,
+    title: 'siero-tts',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,

@@ -1,0 +1,23 @@
+Silero TTS models — CC BY-NC-SA 4.0 (non-commercial)
+
+Applies to most other Silero TTS models from the main repository, including:
+- v3_en (English)
+- v5_ru, v5_4_ru, v5_5_ru (classic Russian voices: aidar, baya, kseniya, etc.)
+- v3_de, v3_es, v3_fr, v3_indic, and similar
+
+Full license text:
+https://github.com/snakers4/silero-models/blob/master/LICENSE
+
+Human-readable summary:
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+You are free to:
+- Share and adapt the material
+- Use it for non-commercial purposes
+
+Under the following terms:
+- Attribution — credit Silero Team and link to the license
+- NonCommercial — no commercial use (selling, ads, paid services, etc.)
+- ShareAlike — derivatives must use the same license
+
+This is a summary only. The full legal text in LICENSE above is binding.

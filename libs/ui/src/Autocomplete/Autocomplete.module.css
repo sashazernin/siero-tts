@@ -61,19 +61,66 @@
   color: var(--color-text-muted);
 }
 
+.optionRow {
+  display: flex;
+  align-items: stretch;
+  padding: 0 8px;
+}
+
+.optionRowActive .option {
+  background: var(--color-primary-muted);
+}
+
+.optionPrefix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+
 .option {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   border: none;
   background: transparent;
   color: var(--color-text-primary);
   text-align: left;
-  padding: 10px 14px;
+  padding: 10px 6px;
   transition: background var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
 }
 
 .option:hover,
-.optionActive {
+.optionRowActive .option:hover {
   background: var(--color-primary-muted);
+}
+
+.optionLabel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optionMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.optionSuffix {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.optionWarning {
+  display: inline-flex;
+  color: #f59e0b;
 }
 
 .empty {

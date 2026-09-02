@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="siero-gradient" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDE9FE"/>
+      <stop offset="0.45" stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="siero-glow" x1="256" y1="120" x2="256" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#16161F"/>
+  <circle cx="256" cy="256" r="168" fill="url(#siero-glow)"/>
+  <rect x="148" y="196" width="28" height="120" rx="14" fill="url(#siero-gradient)"/>
+  <rect x="204" y="160" width="28" height="192" rx="14" fill="url(#siero-gradient)"/>
+  <rect x="260" y="184" width="28" height="144" rx="14" fill="url(#siero-gradient)"/>
+  <rect x="316" y="148" width="28" height="216" rx="14" fill="url(#siero-gradient)"/>
+  <path d="M372 220C372 220 392 236 392 256C392 276 372 292 372 292" stroke="url(#siero-gradient)" stroke-width="20" stroke-linecap="round"/>
+</svg>

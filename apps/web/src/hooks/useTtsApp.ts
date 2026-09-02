@@ -12,13 +12,12 @@ export function useTtsApp() {
   const [selectedVoice, setSelectedVoice] = useState<Voice | null>(null);
   const [languageFilter, setLanguageFilter] = useState<LanguageFilter>('any');
   const [genderFilter, setGenderFilter] = useState<GenderFilter>('any');
+  const [commercialUseAllowed, setCommercialUseAllowed] = useState(true);
   const [text, setText] = useState('');
   const [history, setHistory] = useState<GenerationItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isVoicesLoading, setIsVoicesLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  const languages = useMemo(() => getLanguageOptions(), []);
 
   useEffect(() => {
     let cancelled = false;
@@ -60,9 +59,11 @@ export function useTtsApp() {
   }, []);
 
   const filteredVoices = useMemo(
-    () => filterVoices(voices, languageFilter, genderFilter),
-    [voices, languageFilter, genderFilter],
+    () => filterVoices(voices, languageFilter, genderFilter, commercialUseAllowed),
+    [voices, languageFilter, genderFilter, commercialUseAllowed],
   );
+
+  const languages = useMemo(() => getLanguageOptions(filteredVoices), [filteredVoices]);
 
   useEffect(() => {
     if (filteredVoices.length === 0) {
@@ -71,7 +72,10 @@ export function useTtsApp() {
     }
 
     const stillVisible = selectedVoice
-      ? filteredVoices.some((voice) => voice.id === selectedVoice.id)
+      ? filteredVoices.some(
+          (voice) =>
+            voice.id === selectedVoice.id && voice.modelId === selectedVoice.modelId,
+        )
       : false;
 
     if (!stillVisible) {
@@ -92,6 +96,7 @@ export function useTtsApp() {
       const blob = await synthesizeSpeech({
         text: trimmedText,
         speaker: selectedVoice.id,
+        model: selectedVoice.modelId,
         sample_rate: 48000,
       });
 
@@ -115,6 +120,8 @@ export function useTtsApp() {
 
   const clearError = useCallback(() => setError(null), []);
 
+  const showLicenseWarning = Boolean(selectedVoice && !selectedVoice.commercialAllowed);
+
   return {
     voices,
     filteredVoices,
@@ -125,6 +132,9 @@ export function useTtsApp() {
     setLanguageFilter,
     genderFilter,
     setGenderFilter,
+    commercialUseAllowed,
+    setCommercialUseAllowed,
+    showLicenseWarning,
     text,
     setText,
     history,

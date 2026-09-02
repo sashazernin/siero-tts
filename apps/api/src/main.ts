@@ -1,7 +1,14 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { MODEL_ID, VOICE_IDS, VOICES } from '@siero-tts/shared';
+import {
+  DEFAULT_MODEL_ID,
+  MODELS,
+  VOICES,
+  findVoice,
+  isModelId,
+} from '@siero-tts/shared';
 import { SileroWorker } from './silero-worker';
+import type { ModelId } from '@siero-tts/shared';
 
 const PORT = Number(process.env.PORT ?? 8000);
 const HOST = process.env.HOST ?? '127.0.0.1';
@@ -9,10 +16,28 @@ const HOST = process.env.HOST ?? '127.0.0.1';
 interface TtsBody {
   text: string;
   speaker: string;
+  model?: ModelId;
   sample_rate?: 8000 | 24000 | 48000;
 }
 
 const worker = new SileroWorker();
+
+function filterAvailableVoices() {
+  const loadedModels = worker.getLoadedModels();
+
+  if (loadedModels.size === 0) {
+    return VOICES;
+  }
+
+  return VOICES.filter((voice) => {
+    const speakers = loadedModels.get(voice.modelId);
+    if (!speakers || speakers.size === 0) {
+      return true;
+    }
+
+    return speakers.has(voice.id);
+  });
+}
 
 async function buildServer() {
   const app = Fastify({ logger: true });
@@ -21,33 +46,41 @@ async function buildServer() {
 
   app.get('/api/health', async () => ({
     status: 'ok',
-    model: MODEL_ID,
+    models: Object.values(MODELS).map((model) => ({
+      id: model.id,
+      commercialAllowed: model.commercialAllowed,
+      loaded: worker.getSpeakers(model.id).size > 0,
+    })),
     ready: true,
   }));
 
-  app.get('/api/voices', async () => {
-    const availableSpeakers = worker.getSpeakers();
-    if (availableSpeakers.size === 0) {
-      return VOICES;
-    }
-
-    return VOICES.filter((voice) => availableSpeakers.has(voice.id));
-  });
+  app.get('/api/voices', async () => filterAvailableVoices());
 
   app.post<{ Body: TtsBody }>('/api/tts', async (request, reply) => {
-    const { text, speaker, sample_rate = 48000 } = request.body;
+    const { text, speaker, model, sample_rate = 48000 } = request.body;
     const trimmedText = text?.trim();
 
     if (!trimmedText) {
       return reply.code(400).send({ detail: 'Text is empty' });
     }
 
-    if (!VOICE_IDS.has(speaker)) {
+    const modelId = model ?? DEFAULT_MODEL_ID;
+    if (!isModelId(modelId)) {
+      return reply.code(400).send({ detail: 'Unknown model' });
+    }
+
+    const resolvedVoice = findVoice(VOICES, modelId, speaker);
+    if (!resolvedVoice) {
       return reply.code(400).send({ detail: 'Unknown speaker' });
     }
 
     try {
-      const audio = await worker.synthesize(trimmedText, speaker, sample_rate);
+      const audio = await worker.synthesize(
+        trimmedText,
+        speaker,
+        sample_rate,
+        resolvedVoice.modelId,
+      );
       return reply.type('audio/wav').send(audio);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Synthesis failed';

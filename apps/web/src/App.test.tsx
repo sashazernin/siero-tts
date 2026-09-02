@@ -1,6 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
+jest.mock('./hooks/useVoicePreview', () => ({
+  useVoicePreview: () => ({
+    playPreview: jest.fn(),
+    playingKey: null,
+    loadingKey: null,
+    isPlaying: () => false,
+    isPreviewLoading: () => false,
+  }),
+}));
+
 jest.mock('./hooks/useTtsApp', () => ({
   useTtsApp: () => ({
     filteredVoices: [],
@@ -11,6 +21,9 @@ jest.mock('./hooks/useTtsApp', () => ({
     setLanguageFilter: jest.fn(),
     genderFilter: 'any',
     setGenderFilter: jest.fn(),
+    commercialUseAllowed: true,
+    setCommercialUseAllowed: jest.fn(),
+    showLicenseWarning: false,
     text: '',
     setText: jest.fn(),
     history: [],

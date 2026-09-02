@@ -1,6 +1,16 @@
 .header {
   padding: 28px 24px 12px;
-  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.titles {
+  text-align: left;
 }
 
 .title {
@@ -19,4 +29,15 @@
   margin: 8px 0 0;
   color: var(--color-text-secondary);
   font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .brand {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .titles {
+    text-align: center;
+  }
 }

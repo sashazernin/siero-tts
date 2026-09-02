@@ -13,103 +13,101 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "jest.preset.js",
-        "hash": "9430166341120122740"
+        "file": "latest_silero_models.yml",
+        "hash": "1265057395304281555"
+      },
+      {
+        "file": "README.md",
+        "hash": "8482398744069897232"
       },
       {
         "file": "electron-builder.json",
-        "hash": "10672390012855800183"
+        "hash": "5835184998812523721"
       },
       {
-        "file": "package-lock.json",
-        "hash": "18104480646866514740"
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "13433217807210833301"
       },
       {
-        "file": "README.md",
-        "hash": "3346691182251530677"
-      },
-      {
         "file": ".gitattributes",
         "hash": "13194702717607086212"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "11688401206525180159"
-      },
-      {
-        "file": "nx.json",
-        "hash": "7212375146203297501"
       },
       {
         "file": "package.json",
         "hash": "10886153897642051577"
       },
       {
-        "file": "latest_silero_models.yml",
-        "hash": "1265057395304281555"
+        "file": "nx.json",
+        "hash": "7212375146203297501"
+      },
+      {
+        "file": "licenses/SILERO-STRESS-LICENSE.txt",
+        "hash": "15864415464406488846"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "18104480646866514740"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11688401206525180159"
+      },
+      {
+        "file": "licenses/SILERO-LICENSE-CIS.txt",
+        "hash": "15755534543543895343"
+      },
+      {
+        "file": "licenses/SILERO-LICENSE-NC.txt",
+        "hash": "17987329558117794478"
       }
     ],
     "projectFileMap": {
-      "api": [
+      "shared": [
         {
-          "file": "apps/api/package.json",
-          "hash": "2177819437385055386",
-          "deps": [
-            "npm:@fastify/cors",
-            "shared",
-            "npm:fastify"
-          ]
+          "file": "libs/shared/package.json",
+          "hash": "3012413928161699351"
         },
         {
-          "file": "apps/api/project.json",
-          "hash": "12315207107026665023"
+          "file": "libs/shared/project.json",
+          "hash": "17042916795582287384"
         },
         {
-          "file": "apps/api/python/latest_silero_models.yml",
-          "hash": "1265057395304281555"
+          "file": "libs/shared/src/index.ts",
+          "hash": "11912177483737909718"
         },
         {
-          "file": "apps/api/python/requirements.txt",
-          "hash": "10328907733116658414"
+          "file": "libs/shared/src/lib/models.ts",
+          "hash": "10331537490659563910"
         },
         {
-          "file": "apps/api/python/test_pipeline.py",
-          "hash": "1138190066013121890"
+          "file": "libs/shared/src/lib/nc-voices.ts",
+          "hash": "11772975309935384799"
         },
         {
-          "file": "apps/api/python/worker.py",
-          "hash": "11384179807621838908"
+          "file": "libs/shared/src/lib/types.ts",
+          "hash": "6705159713867823576"
         },
         {
-          "file": "apps/api/src/main.ts",
-          "hash": "7389623481125003261",
-          "deps": [
-            "npm:fastify",
-            "npm:@fastify/cors",
-            "shared"
-          ]
+          "file": "libs/shared/src/lib/voice-samples.ts",
+          "hash": "6682499618412702865"
         },
         {
-          "file": "apps/api/src/silero-worker.ts",
-          "hash": "677924906293795509"
+          "file": "libs/shared/src/lib/voices.ts",
+          "hash": "7650069952416754105"
         },
         {
-          "file": "apps/api/tsconfig.app.json",
-          "hash": "5726880813533895010"
-        },
-        {
-          "file": "apps/api/tsconfig.json",
-          "hash": "13690971072820468491"
+          "file": "libs/shared/tsconfig.json",
+          "hash": "120683878903975165"
         }
       ],
       "web": [
         {
           "file": "apps/web/index.html",
-          "hash": "5594785772335297333"
+          "hash": "2893858121560972235"
         },
         {
           "file": "apps/web/jest.config.js",
@@ -129,23 +127,31 @@
         },
         {
           "file": "apps/web/public/favicon.ico",
-          "hash": "2949791817221603359"
+          "hash": "16928673615645372457"
         },
         {
           "file": "apps/web/public/index.html",
           "hash": "6283320323736086875"
         },
         {
+          "file": "apps/web/public/logo.svg",
+          "hash": "13244488514678961462"
+        },
+        {
           "file": "apps/web/public/logo192.png",
-          "hash": "7585273181698778288"
+          "hash": "16309253536176189712"
+        },
+        {
+          "file": "apps/web/public/logo256.png",
+          "hash": "12192847716043626491"
         },
         {
           "file": "apps/web/public/logo512.png",
-          "hash": "9339365414554387981"
+          "hash": "822926754969408132"
         },
         {
           "file": "apps/web/public/manifest.json",
-          "hash": "1447645250373428393"
+          "hash": "17061260191476722571"
         },
         {
           "file": "apps/web/public/robots.txt",
@@ -157,14 +163,14 @@
         },
         {
           "file": "apps/web/src/App.test.tsx",
-          "hash": "14161373010242881283",
+          "hash": "803818712868784158",
           "deps": [
             "npm:@testing-library/react"
           ]
         },
         {
           "file": "apps/web/src/App.tsx",
-          "hash": "302082828947280977",
+          "hash": "17870373438853231728",
           "deps": [
             "npm:react",
             "ui"
@@ -172,18 +178,18 @@
         },
         {
           "file": "apps/web/src/api/tts.ts",
-          "hash": "4691740273734301791",
+          "hash": "8603174885567015316",
           "deps": [
             "shared"
           ]
         },
         {
           "file": "apps/web/src/components/AppHeader/AppHeader.module.css",
-          "hash": "7034937298856832546"
+          "hash": "11213420979179701993"
         },
         {
           "file": "apps/web/src/components/AppHeader/AppHeader.tsx",
-          "hash": "5203190447808685995",
+          "hash": "4113267772986899623",
           "deps": [
             "npm:react"
           ]
@@ -191,6 +197,21 @@
         {
           "file": "apps/web/src/components/AppHeader/index.ts",
           "hash": "9855135387560150749"
+        },
+        {
+          "file": "apps/web/src/components/AppLogo/AppLogo.module.css",
+          "hash": "2169207085170119103"
+        },
+        {
+          "file": "apps/web/src/components/AppLogo/AppLogo.tsx",
+          "hash": "12308117436470540796",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/AppLogo/index.ts",
+          "hash": "17027649305609858098"
         },
         {
           "file": "apps/web/src/components/BackgroundLayout/BackgroundLayout.module.css",
@@ -237,15 +258,32 @@
           "hash": "17080573140424153960"
         },
         {
+          "file": "apps/web/src/components/LicenseWarningBanner/LicenseWarningBanner.module.css",
+          "hash": "13407685080599453858"
+        },
+        {
+          "file": "apps/web/src/components/LicenseWarningBanner/LicenseWarningBanner.tsx",
+          "hash": "13830069214363698033",
+          "deps": [
+            "npm:react",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/LicenseWarningBanner/index.ts",
+          "hash": "17689168832784278814"
+        },
+        {
           "file": "apps/web/src/components/TtsInput/TtsInput.module.css",
           "hash": "15657196490602743938"
         },
         {
           "file": "apps/web/src/components/TtsInput/TtsInput.tsx",
-          "hash": "7728148327398657648",
+          "hash": "9399806719939868843",
           "deps": [
             "npm:react",
-            "ui"
+            "ui",
+            "shared"
           ]
         },
         {
@@ -254,11 +292,11 @@
         },
         {
           "file": "apps/web/src/components/VoiceControls/VoiceControls.module.css",
-          "hash": "13387236713542702058"
+          "hash": "4014078482778385469"
         },
         {
           "file": "apps/web/src/components/VoiceControls/VoiceControls.tsx",
-          "hash": "11915640177704267121",
+          "hash": "4883621776619327545",
           "deps": [
             "npm:react",
             "ui",
@@ -270,12 +308,37 @@
           "hash": "2422417498163985630"
         },
         {
+          "file": "apps/web/src/components/VoicePreviewButton/VoicePreviewButton.module.css",
+          "hash": "3333597884146117290"
+        },
+        {
+          "file": "apps/web/src/components/VoicePreviewButton/VoicePreviewButton.tsx",
+          "hash": "6752684717671863419",
+          "deps": [
+            "npm:react",
+            "ui",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/VoicePreviewButton/index.ts",
+          "hash": "16281498810790347696"
+        },
+        {
           "file": "apps/web/src/config/api.ts",
           "hash": "12634521864756664493"
         },
         {
           "file": "apps/web/src/hooks/useTtsApp.ts",
-          "hash": "7122673316826267359",
+          "hash": "14983478379037464383",
+          "deps": [
+            "npm:react",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/web/src/hooks/useVoicePreview.ts",
+          "hash": "17779384208561924051",
           "deps": [
             "npm:react",
             "shared"
@@ -330,7 +393,66 @@
           ]
         }
       ],
+      "api": [
+        {
+          "file": "apps/api/package.json",
+          "hash": "2177819437385055386",
+          "deps": [
+            "npm:@fastify/cors",
+            "shared",
+            "npm:fastify"
+          ]
+        },
+        {
+          "file": "apps/api/project.json",
+          "hash": "12315207107026665023"
+        },
+        {
+          "file": "apps/api/python/latest_silero_models.yml",
+          "hash": "1265057395304281555"
+        },
+        {
+          "file": "apps/api/python/requirements.txt",
+          "hash": "10328907733116658414"
+        },
+        {
+          "file": "apps/api/python/test_pipeline.py",
+          "hash": "1138190066013121890"
+        },
+        {
+          "file": "apps/api/python/worker.py",
+          "hash": "10581312308333808422"
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "6008096442238565656",
+          "deps": [
+            "npm:fastify",
+            "npm:@fastify/cors",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/api/src/silero-worker.ts",
+          "hash": "7998936360066642678",
+          "deps": [
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "5726880813533895010"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "13690971072820468491"
+        }
+      ],
       "desktop": [
+        {
+          "file": "apps/desktop/assets/icon.ico",
+          "hash": "17817775290605626554"
+        },
         {
           "file": "apps/desktop/package.json",
           "hash": "7845489437792306504"
@@ -341,7 +463,7 @@
         },
         {
           "file": "apps/desktop/src/main.js",
-          "hash": "7962902272084352582",
+          "hash": "651440927910378020",
           "deps": [
             "npm:electron"
           ]
@@ -369,11 +491,11 @@
         },
         {
           "file": "libs/ui/src/Autocomplete/Autocomplete.module.css",
-          "hash": "2782004442787142281"
+          "hash": "230048182742204360"
         },
         {
           "file": "libs/ui/src/Autocomplete/Autocomplete.tsx",
-          "hash": "6809670829651080535",
+          "hash": "6400080989413483045",
           "deps": [
             "npm:react"
           ]
@@ -494,32 +616,6 @@
         {
           "file": "libs/ui/tsconfig.json",
           "hash": "1450945288934925784"
-        }
-      ],
-      "shared": [
-        {
-          "file": "libs/shared/package.json",
-          "hash": "3012413928161699351"
-        },
-        {
-          "file": "libs/shared/project.json",
-          "hash": "17042916795582287384"
-        },
-        {
-          "file": "libs/shared/src/index.ts",
-          "hash": "16979824074787583486"
-        },
-        {
-          "file": "libs/shared/src/lib/types.ts",
-          "hash": "3015065859357590152"
-        },
-        {
-          "file": "libs/shared/src/lib/voices.ts",
-          "hash": "18321791095402784496"
-        },
-        {
-          "file": "libs/shared/tsconfig.json",
-          "hash": "120683878903975165"
         }
       ]
     }

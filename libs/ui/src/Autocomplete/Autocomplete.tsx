@@ -5,6 +5,8 @@ export interface AutocompleteOption {
   value: string;
   label: string;
   group?: string;
+  suffix?: string;
+  warning?: boolean;
 }
 
 export interface AutocompleteProps {
@@ -15,6 +17,7 @@ export interface AutocompleteProps {
   onChange: (value: AutocompleteOption | null) => void;
   groupBy?: (option: AutocompleteOption) => string;
   filterOptions?: (options: AutocompleteOption[], query: string) => AutocompleteOption[];
+  renderOptionPrefix?: (option: AutocompleteOption) => React.ReactNode;
   className?: string;
 }
 
@@ -40,6 +43,7 @@ export function Autocomplete({
   onChange,
   groupBy,
   filterOptions = defaultFilter,
+  renderOptionPrefix,
   className = '',
 }: AutocompleteProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -122,23 +126,58 @@ export function Autocomplete({
                 <div key={group.group || 'default'}>
                   {group.group ? <div className={styles.groupLabel}>{group.group}</div> : null}
                   {group.items.map((option) => (
-                    <button
+                    <div
                       key={option.value}
-                      type="button"
                       className={[
-                        styles.option,
-                        value?.value === option.value ? styles.optionActive : '',
+                        styles.optionRow,
+                        value?.value === option.value ? styles.optionRowActive : '',
                       ]
                         .filter(Boolean)
                         .join(' ')}
-                      onClick={() => {
-                        onChange(option);
-                        setQuery(option.label);
-                        setOpen(false);
-                      }}
                     >
-                      {option.label}
-                    </button>
+                      {renderOptionPrefix ? (
+                        <div
+                          className={styles.optionPrefix}
+                          onMouseDown={(event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                          }}
+                        >
+                          {renderOptionPrefix(option)}
+                        </div>
+                      ) : null}
+                      <button
+                        type="button"
+                        className={styles.option}
+                        onClick={() => {
+                          onChange(option);
+                          setQuery(option.label);
+                          setOpen(false);
+                        }}
+                      >
+                      <span className={styles.optionLabel}>{option.label}</span>
+                      {option.suffix || option.warning ? (
+                        <span className={styles.optionMeta}>
+                          {option.warning ? (
+                            <span className={styles.optionWarning} title="Только некоммерческое использование">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path
+                                  d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </span>
+                          ) : null}
+                          {option.suffix ? (
+                            <span className={styles.optionSuffix}>{option.suffix}</span>
+                          ) : null}
+                        </span>
+                      ) : null}
+                      </button>
+                    </div>
                   ))}
                 </div>
               ))

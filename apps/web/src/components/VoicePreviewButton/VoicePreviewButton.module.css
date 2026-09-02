@@ -1,0 +1,14 @@
+.button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: var(--color-text-secondary);
+}
+
+.button:hover:not(:disabled) {
+  color: var(--color-primary);
+}
+
+.buttonActive {
+  color: var(--color-primary);
+}

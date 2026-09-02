@@ -4,6 +4,7 @@ import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import { createInterface } from 'node:readline';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
+import type { ModelId } from '@siero-tts/shared';
 
 interface WorkerResponse {
   id?: string;
@@ -13,6 +14,7 @@ interface WorkerResponse {
   error?: string;
   event?: string;
   model?: string;
+  models?: Record<string, string[]>;
   speakers?: string[];
 }
 
@@ -24,7 +26,7 @@ interface PendingRequest {
 export class SileroWorker extends EventEmitter {
   private process: ChildProcessWithoutNullStreams | null = null;
   private ready = false;
-  private speakers = new Set<string>();
+  private speakersByModel = new Map<ModelId, Set<string>>();
   private readonly pending = new Map<string, PendingRequest>();
 
   async start(): Promise<void> {
@@ -62,8 +64,18 @@ export class SileroWorker extends EventEmitter {
 
         if (message.event === 'ready') {
           this.ready = true;
-          this.speakers = new Set(message.speakers ?? []);
-          this.emit('ready', message.model);
+          this.speakersByModel.clear();
+
+          Object.entries(message.models ?? {}).forEach(([modelId, speakers]) => {
+            this.speakersByModel.set(modelId as ModelId, new Set(speakers));
+          });
+
+          this.emit('ready', message.models);
+          return;
+        }
+
+        if (message.event === 'model_loaded' && message.model && message.speakers) {
+          this.speakersByModel.set(message.model as ModelId, new Set(message.speakers));
           return;
         }
 
@@ -117,7 +129,12 @@ export class SileroWorker extends EventEmitter {
     });
   }
 
-  async synthesize(text: string, speaker: string, sampleRate: number): Promise<Buffer> {
+  async synthesize(
+    text: string,
+    speaker: string,
+    sampleRate: number,
+    model: ModelId,
+  ): Promise<Buffer> {
     if (!this.process || !this.ready) {
       throw new Error('Silero worker is not ready');
     }
@@ -132,6 +149,7 @@ export class SileroWorker extends EventEmitter {
         command: 'synthesize',
         text,
         speaker,
+        model,
         sample_rate: sampleRate,
       });
 
@@ -139,8 +157,21 @@ export class SileroWorker extends EventEmitter {
     });
   }
 
-  getSpeakers(): ReadonlySet<string> {
-    return this.speakers;
+  getSpeakers(modelId?: ModelId): ReadonlySet<string> {
+    if (modelId) {
+      return this.speakersByModel.get(modelId) ?? new Set();
+    }
+
+    const allSpeakers = new Set<string>();
+    this.speakersByModel.forEach((speakers) => {
+      speakers.forEach((speaker) => allSpeakers.add(speaker));
+    });
+
+    return allSpeakers;
+  }
+
+  getLoadedModels(): ReadonlyMap<ModelId, ReadonlySet<string>> {
+    return this.speakersByModel;
   }
 
   stop(): void {

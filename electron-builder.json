@@ -21,6 +21,13 @@
     }
   ],
   "win": {
-    "target": "nsis"
+    "target": "nsis",
+    "icon": "apps/desktop/assets/icon.ico"
+  },
+  "mac": {
+    "icon": "apps/desktop/assets/icon.ico"
+  },
+  "linux": {
+    "icon": "apps/desktop/assets/icon.ico"
   }
 }

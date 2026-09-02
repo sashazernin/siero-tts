@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import { AppHeader } from './components/AppHeader';
 import { BackgroundLayout } from './components/BackgroundLayout';
 import { GenerationHistory } from './components/GenerationHistory';
+import { LicenseWarningBanner } from './components/LicenseWarningBanner';
 import { TtsInput } from './components/TtsInput';
 import { VoiceControls } from './components/VoiceControls';
 import { useTtsApp } from './hooks/useTtsApp';
@@ -18,6 +19,9 @@ function App() {
     setLanguageFilter,
     genderFilter,
     setGenderFilter,
+    commercialUseAllowed,
+    setCommercialUseAllowed,
+    showLicenseWarning,
     text,
     setText,
     history,
@@ -35,6 +39,7 @@ function App() {
       <div className={styles.page}>
         <AppHeader />
         <main className={styles.main}>
+          {showLicenseWarning ? <LicenseWarningBanner /> : null}
           <VoiceControls
             voices={filteredVoices}
             languages={languages}
@@ -44,12 +49,14 @@ function App() {
             onLanguageFilterChange={setLanguageFilter}
             genderFilter={genderFilter}
             onGenderFilterChange={setGenderFilter}
+            commercialUseAllowed={commercialUseAllowed}
+            onCommercialUseAllowedChange={setCommercialUseAllowed}
             onConvert={generate}
             isLoading={isLoading}
             isVoicesLoading={isVoicesLoading}
             canConvert={canConvert}
           />
-          <TtsInput value={text} onChange={setText} />
+          <TtsInput value={text} onChange={setText} selectedVoice={selectedVoice} />
           <GenerationHistory items={history} />
         </main>
       </div>
