@@ -4154,3 +4154,50 @@ DEBUG nx::native::tasks::task_hasher: hash_plans COMPLETED in 1.6982ms - process
 [NX v21.6.11 Daemon Server] - 2026-09-03T20:40:15.965Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
 [NX v21.6.11 Daemon Server] - 2026-09-03T20:40:15.965Z - Done responding to the client handleGetEstimatedTaskTimings
 [NX v21.6.11 Daemon Server] - 2026-09-03T20:40:15.965Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 0. Response time: 0.
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.374Z - [WATCHER]: .github/workflows/electron-release.yml was modified
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.375Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.481Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.481Z - [REQUEST]: .github/workflows/electron-release.yml
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.481Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.483Z - Time taken for 'hash changed files from watcher' 0.219200000166893ms
+Time for 'nx/core/project-json:createNodes' [33m0.9046000000089407[39m
+Time for 'nx/core/package-json:createNodes' [33m3.895499998703599[39m
+Time for 'nx/js/dependencies-and-lockfile:createNodes' [33m15.515000000596046[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.512Z - Time taken for 'build-project-configs' 21.84860000014305ms
+Time for 'build typescript dependencies' [33m0.022600000724196434[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.533Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.534Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.534Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.534Z - Time taken for 'total execution time for createProjectGraph()' 24.255200000479817ms
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.665Z - [WATCHER]: README.md was modified
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.666Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.881Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.881Z - [REQUEST]: README.md
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.881Z - [REQUEST]: 
+Time for 'nx/core/project-json:createNodes' [33m0.6842999998480082[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.885Z - Time taken for 'hash changed files from watcher' 0.3475000001490116ms
+Time for 'nx/core/package-json:createNodes' [33m3.070599999278784[39m
+Time for 'nx/js/dependencies-and-lockfile:createNodes' [33m6.538899999111891[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.899Z - Time taken for 'build-project-configs' 10.267200000584126ms
+Time for 'build typescript dependencies' [33m0.08499999903142452[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.924Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.925Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.925Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T20:59:37.931Z - Time taken for 'total execution time for createProjectGraph()' 29.051400000229478ms
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.398Z - [WATCHER]: .github/workflows/electron-release.yml was modified
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.398Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.795Z - [WATCHER]: README.md was modified
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.795Z - [WATCHER]: Processing file changes in outputs
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.811Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.811Z - [REQUEST]: .github/workflows/electron-release.yml,README.md
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.811Z - [REQUEST]: 
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.813Z - Time taken for 'hash changed files from watcher' 0.4621999990195036ms
+Time for 'nx/core/project-json:createNodes' [33m2.9211999997496605[39m
+Time for 'nx/core/package-json:createNodes' [33m4.902899999171495[39m
+Time for 'nx/js/dependencies-and-lockfile:createNodes' [33m13.107400000095367[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.840Z - Time taken for 'build-project-configs' 20.088700000196695ms
+Time for 'build typescript dependencies' [33m0.03830000013113022[39m
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.859Z - [SYNC]: collect registered sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.859Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.859Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v21.6.11 Daemon Server] - 2026-09-03T21:01:22.860Z - Time taken for 'total execution time for createProjectGraph()' 24.44400000013411ms

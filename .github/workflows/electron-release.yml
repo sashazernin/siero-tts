@@ -35,6 +35,14 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
         run: npm run build:e:zip
 
+      - name: Name zip by build number
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        run: |
+          $zip = Get-ChildItem -Path dist_electron -Filter *.zip | Select-Object -First 1
+          if (-not $zip) { throw 'Portable zip not found' }
+          Rename-Item $zip.FullName "siero-tts-build-${{ github.run_number }}-win.zip"
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -42,7 +50,7 @@ jobs:
           path: dist_electron/*.zip
           if-no-files-found: error
 
-      - name: Publish GitHub Release
+      - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
@@ -50,13 +58,13 @@ jobs:
           generate_release_notes: true
           fail_on_unmatched_files: true
 
-      - name: Publish latest main build
+      - name: Publish main build
         if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: Latest (main)
-          prerelease: true
+          tag_name: build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
+          prerelease: false
+          make_latest: true
           files: dist_electron/*.zip
-          make_latest: false
           fail_on_unmatched_files: true

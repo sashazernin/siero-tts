@@ -60,9 +60,9 @@ pip install -r apps/api/python/requirements.txt
 
 ## GitHub Releases
 
-Каждый пуш в `main` собирает Windows portable zip и обновляет пререлиз **Latest (main)** (`latest`).
+Каждый пуш в `main` создаёт обычный релиз со счётчиком сборки: **Build 12**, тег `build-12`, архив `siero-tts-build-12-win.zip`. Номер берётся из GitHub Actions (`run_number`).
 
-Версионный релиз — на тег вида `v1.0.0`:
+Тег вида `v1.0.0` по-прежнему делает отдельный релиз по этому тегу:
 
 ```bash
 git tag v0.1.0
