@@ -7,9 +7,11 @@ export interface AppLogoProps {
 }
 
 export function AppLogo({ size = 48, className = '' }: AppLogoProps) {
+  const src = `${import.meta.env.BASE_URL}logo.svg`;
+
   return (
     <img
-      src="/logo.svg"
+      src={src}
       alt=""
       width={size}
       height={size}

@@ -17,56 +17,60 @@
         "hash": "15864415464406488846"
       },
       {
-        "file": "jest.preset.js",
-        "hash": "9430166341120122740"
-      },
-      {
-        "file": "package.json",
-        "hash": "11458255770053677317"
-      },
-      {
         "file": "README.md",
-        "hash": "4513886943836480011"
-      },
-      {
-        "file": "licenses/SILERO-LICENSE-CIS.txt",
-        "hash": "15755534543543895343"
-      },
-      {
-        "file": "nx.json",
-        "hash": "7212375146203297501"
-      },
-      {
-        "file": ".gitattributes",
-        "hash": "13194702717607086212"
-      },
-      {
-        "file": "electron-builder.json",
-        "hash": "8098192330088127380"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "11688401206525180159"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "18104480646866514740"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "13433217807210833301"
-      },
-      {
-        "file": "latest_silero_models.yml",
-        "hash": "1265057395304281555"
+        "hash": "13116183406371545628"
       },
       {
         "file": "licenses/SILERO-LICENSE-NC.txt",
         "hash": "17987329558117794478"
       },
       {
+        "file": ".gitignore",
+        "hash": "11688401206525180159"
+      },
+      {
+        "file": "package.json",
+        "hash": "14334671704905807595"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "13433217807210833301"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "13194702717607086212"
+      },
+      {
+        "file": "licenses/SILERO-LICENSE-CIS.txt",
+        "hash": "15755534543543895343"
+      },
+      {
         "file": ".vscode/settings.json",
         "hash": "5165144127271775677"
+      },
+      {
+        "file": "latest_silero_models.yml",
+        "hash": "1265057395304281555"
+      },
+      {
+        "file": "electron-builder.json",
+        "hash": "5690057140699696985"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "18104480646866514740"
+      },
+      {
+        "file": ".github/workflows/electron-release.yml",
+        "hash": "16789844321454709023"
+      },
+      {
+        "file": "nx.json",
+        "hash": "7212375146203297501"
       }
     ],
     "projectFileMap": {
@@ -171,7 +175,7 @@
       "web": [
         {
           "file": "apps/web/index.html",
-          "hash": "2893858121560972235"
+          "hash": "10443285521662760933"
         },
         {
           "file": "apps/web/jest.config.js",
@@ -268,7 +272,7 @@
         },
         {
           "file": "apps/web/src/components/AppLogo/AppLogo.tsx",
-          "hash": "12308117436470540796",
+          "hash": "9744866178164488264",
           "deps": [
             "npm:react"
           ]
