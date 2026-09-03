@@ -23,21 +23,31 @@ export function useTtsApp() {
     let cancelled = false;
 
     async function loadVoices() {
-      try {
-        setIsVoicesLoading(true);
-        const loadedVoices = await fetchVoices();
-        if (cancelled) {
-          return;
-        }
+      setIsVoicesLoading(true);
 
-        setVoices(loadedVoices);
-      } catch (loadError) {
-        if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : 'Не удалось загрузить голоса');
-        }
-      } finally {
-        if (!cancelled) {
+      for (let attempt = 1; attempt <= 120; attempt += 1) {
+        try {
+          const loadedVoices = await fetchVoices();
+          if (cancelled) {
+            return;
+          }
+
+          setVoices(loadedVoices);
+          setError(null);
           setIsVoicesLoading(false);
+          return;
+        } catch (loadError) {
+          if (cancelled) {
+            return;
+          }
+
+          if (attempt === 120) {
+            setError(loadError instanceof Error ? loadError.message : 'Не удалось загрузить голоса');
+            setIsVoicesLoading(false);
+            return;
+          }
+
+          await new Promise((resolve) => setTimeout(resolve, 1000));
         }
       }
     }
@@ -58,12 +68,17 @@ export function useTtsApp() {
     };
   }, []);
 
+  const catalogVoices = useMemo(
+    () => filterVoices(voices, 'any', 'any', commercialUseAllowed),
+    [voices, commercialUseAllowed],
+  );
+
   const filteredVoices = useMemo(
     () => filterVoices(voices, languageFilter, genderFilter, commercialUseAllowed),
     [voices, languageFilter, genderFilter, commercialUseAllowed],
   );
 
-  const languages = useMemo(() => getLanguageOptions(filteredVoices), [filteredVoices]);
+  const languages = useMemo(() => getLanguageOptions(catalogVoices), [catalogVoices]);
 
   useEffect(() => {
     if (filteredVoices.length === 0) {

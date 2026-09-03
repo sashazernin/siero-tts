@@ -37,7 +37,7 @@
               "api:build"
             ],
             "options": {
-              "command": "electron-builder --config electron-builder.json",
+              "command": "node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.json",
               "cwd": "."
             },
             "configurations": {},
@@ -31292,5 +31292,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1788342083338
+  "computedAt": 1788465698177
 }

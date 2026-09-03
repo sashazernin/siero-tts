@@ -7,9 +7,13 @@
     "libs/*"
   ],
   "scripts": {
-    "start": "concurrently -k -n api,web \"nx serve api\" \"wait-on -t 120000 http-get://127.0.0.1:8000/api/health && nx serve web\"",
+    "dev": "concurrently -k -n api,web \"nx serve api\" \"wait-on -t 120000 http-get://127.0.0.1:8000/api/health && nx serve web\"",
+    "dev:e": "concurrently -k -n web,electron \"nx serve web --host=127.0.0.1 --port=4200\" \"wait-on -t 120000 tcp:127.0.0.1:4200 && electron apps/desktop/src/main.js\"",
+    "prod": "concurrently -k -n api,web \"node dist/apps/api/main.js\" \"wait-on -t 120000 http-get://127.0.0.1:8000/api/health && vite preview --config apps/web/vite.config.ts --port 4200 --host 127.0.0.1\"",
+    "prod:e": "electron apps/desktop/src/main.js --prod",
     "build": "nx run-many -t build -p web,api --parallel=2",
-    "dist": "nx build desktop"
+    "build:e": "nx build desktop",
+    "build:e:zip": "node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.json --win zip"
   },
   "dependencies": {
     "react": "^19.2.8",

@@ -1,34 +1,6 @@
 import { getApiBaseUrl } from '../config/api';
 import type { TtsRequest, Voice } from '@siero-tts/shared';
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function fetchWithRetry(
-  url: string,
-  options?: RequestInit,
-  maxAttempts = 30,
-  delayMs = 1000,
-): Promise<Response> {
-  let lastError: unknown;
-
-  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    try {
-      return await fetch(url, options);
-    } catch (error) {
-      lastError = error;
-      if (attempt === maxAttempts) {
-        break;
-      }
-
-      await sleep(delayMs);
-    }
-  }
-
-  throw lastError instanceof Error ? lastError : new Error('Request failed');
-}
-
 async function handleResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
     let message = `Request failed with status ${response.status}`;
@@ -49,7 +21,7 @@ async function handleResponse<T>(response: Response): Promise<T> {
 }
 
 export async function fetchVoices(): Promise<Voice[]> {
-  const response = await fetchWithRetry(`${getApiBaseUrl()}/api/voices`);
+  const response = await fetch(`${getApiBaseUrl()}/api/voices`);
   return handleResponse<Voice[]>(response);
 }
 

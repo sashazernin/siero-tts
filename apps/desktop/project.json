@@ -16,7 +16,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["web:build", "api:build"],
       "options": {
-        "command": "electron-builder --config electron-builder.json",
+        "command": "node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.json",
         "cwd": "."
       }
     }

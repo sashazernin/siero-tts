@@ -5,6 +5,10 @@ export function getApiBaseUrl(): string {
     return import.meta.env.VITE_API_URL;
   }
 
+  if (typeof navigator !== 'undefined' && /electron/i.test(navigator.userAgent)) {
+    return DEFAULT_API_BASE;
+  }
+
   if (import.meta.env.DEV) {
     return '';
   }

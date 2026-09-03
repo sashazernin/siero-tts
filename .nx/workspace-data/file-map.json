@@ -13,95 +13,159 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "latest_silero_models.yml",
-        "hash": "1265057395304281555"
-      },
-      {
-        "file": "README.md",
-        "hash": "8482398744069897232"
-      },
-      {
-        "file": "electron-builder.json",
-        "hash": "5835184998812523721"
+        "file": "licenses/SILERO-STRESS-LICENSE.txt",
+        "hash": "15864415464406488846"
       },
       {
         "file": "jest.preset.js",
         "hash": "9430166341120122740"
       },
       {
-        "file": "tsconfig.base.json",
-        "hash": "13433217807210833301"
-      },
-      {
-        "file": ".gitattributes",
-        "hash": "13194702717607086212"
-      },
-      {
         "file": "package.json",
-        "hash": "10886153897642051577"
+        "hash": "11458255770053677317"
       },
       {
-        "file": "nx.json",
-        "hash": "7212375146203297501"
-      },
-      {
-        "file": "licenses/SILERO-STRESS-LICENSE.txt",
-        "hash": "15864415464406488846"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "18104480646866514740"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "11688401206525180159"
+        "file": "README.md",
+        "hash": "4513886943836480011"
       },
       {
         "file": "licenses/SILERO-LICENSE-CIS.txt",
         "hash": "15755534543543895343"
       },
       {
+        "file": "nx.json",
+        "hash": "7212375146203297501"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "13194702717607086212"
+      },
+      {
+        "file": "electron-builder.json",
+        "hash": "8098192330088127380"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11688401206525180159"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "18104480646866514740"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "13433217807210833301"
+      },
+      {
+        "file": "latest_silero_models.yml",
+        "hash": "1265057395304281555"
+      },
+      {
         "file": "licenses/SILERO-LICENSE-NC.txt",
         "hash": "17987329558117794478"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "5165144127271775677"
       }
     ],
     "projectFileMap": {
-      "shared": [
+      "desktop": [
         {
-          "file": "libs/shared/package.json",
-          "hash": "3012413928161699351"
+          "file": "apps/desktop/assets/icon.ico",
+          "hash": "17817775290605626554"
         },
         {
-          "file": "libs/shared/project.json",
-          "hash": "17042916795582287384"
+          "file": "apps/desktop/package.json",
+          "hash": "7845489437792306504"
         },
         {
-          "file": "libs/shared/src/index.ts",
-          "hash": "11912177483737909718"
+          "file": "apps/desktop/project.json",
+          "hash": "5913431334059040674"
         },
         {
-          "file": "libs/shared/src/lib/models.ts",
-          "hash": "10331537490659563910"
+          "file": "apps/desktop/scripts/prepare-pack.js",
+          "hash": "15709036896132669535"
         },
         {
-          "file": "libs/shared/src/lib/nc-voices.ts",
-          "hash": "11772975309935384799"
+          "file": "apps/desktop/src/loader-preload.js",
+          "hash": "6593603729320730554",
+          "deps": [
+            "npm:electron"
+          ]
         },
         {
-          "file": "libs/shared/src/lib/types.ts",
-          "hash": "6705159713867823576"
+          "file": "apps/desktop/src/loader.html",
+          "hash": "9426371819637711095"
         },
         {
-          "file": "libs/shared/src/lib/voice-samples.ts",
-          "hash": "6682499618412702865"
+          "file": "apps/desktop/src/main.js",
+          "hash": "9899555577680112424",
+          "deps": [
+            "npm:electron"
+          ]
         },
         {
-          "file": "libs/shared/src/lib/voices.ts",
-          "hash": "7650069952416754105"
+          "file": "apps/desktop/src/preload.js",
+          "hash": "14764704573293920108",
+          "deps": [
+            "npm:electron"
+          ]
+        }
+      ],
+      "api": [
+        {
+          "file": "apps/api/package.json",
+          "hash": "2177819437385055386",
+          "deps": [
+            "npm:@fastify/cors",
+            "shared",
+            "npm:fastify"
+          ]
         },
         {
-          "file": "libs/shared/tsconfig.json",
-          "hash": "120683878903975165"
+          "file": "apps/api/project.json",
+          "hash": "12315207107026665023"
+        },
+        {
+          "file": "apps/api/python/latest_silero_models.yml",
+          "hash": "1265057395304281555"
+        },
+        {
+          "file": "apps/api/python/requirements.txt",
+          "hash": "10328907733116658414"
+        },
+        {
+          "file": "apps/api/python/test_pipeline.py",
+          "hash": "1138190066013121890"
+        },
+        {
+          "file": "apps/api/python/worker.py",
+          "hash": "10581312308333808422"
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "6008096442238565656",
+          "deps": [
+            "npm:fastify",
+            "npm:@fastify/cors",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/api/src/silero-worker.ts",
+          "hash": "7998936360066642678",
+          "deps": [
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "5726880813533895010"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "13690971072820468491"
         }
       ],
       "web": [
@@ -178,7 +242,7 @@
         },
         {
           "file": "apps/web/src/api/tts.ts",
-          "hash": "8603174885567015316",
+          "hash": "8172459000997080969",
           "deps": [
             "shared"
           ]
@@ -230,7 +294,7 @@
         },
         {
           "file": "apps/web/src/components/ConvertButton/ConvertButton.tsx",
-          "hash": "12715575862851296879",
+          "hash": "9833551291503693383",
           "deps": [
             "npm:react",
             "ui"
@@ -292,11 +356,11 @@
         },
         {
           "file": "apps/web/src/components/VoiceControls/VoiceControls.module.css",
-          "hash": "4014078482778385469"
+          "hash": "13513387689444235860"
         },
         {
           "file": "apps/web/src/components/VoiceControls/VoiceControls.tsx",
-          "hash": "4883621776619327545",
+          "hash": "14152553577172344146",
           "deps": [
             "npm:react",
             "ui",
@@ -326,11 +390,11 @@
         },
         {
           "file": "apps/web/src/config/api.ts",
-          "hash": "12634521864756664493"
+          "hash": "2182073439345680259"
         },
         {
           "file": "apps/web/src/hooks/useTtsApp.ts",
-          "hash": "14983478379037464383",
+          "hash": "11160360428189912982",
           "deps": [
             "npm:react",
             "shared"
@@ -385,7 +449,7 @@
         },
         {
           "file": "apps/web/vite.config.ts",
-          "hash": "18316065245160145756",
+          "hash": "6875779811592652553",
           "deps": [
             "npm:vite",
             "npm:@vitejs/plugin-react",
@@ -393,87 +457,42 @@
           ]
         }
       ],
-      "api": [
+      "shared": [
         {
-          "file": "apps/api/package.json",
-          "hash": "2177819437385055386",
-          "deps": [
-            "npm:@fastify/cors",
-            "shared",
-            "npm:fastify"
-          ]
+          "file": "libs/shared/package.json",
+          "hash": "3012413928161699351"
         },
         {
-          "file": "apps/api/project.json",
-          "hash": "12315207107026665023"
+          "file": "libs/shared/project.json",
+          "hash": "17042916795582287384"
         },
         {
-          "file": "apps/api/python/latest_silero_models.yml",
-          "hash": "1265057395304281555"
+          "file": "libs/shared/src/index.ts",
+          "hash": "11912177483737909718"
         },
         {
-          "file": "apps/api/python/requirements.txt",
-          "hash": "10328907733116658414"
+          "file": "libs/shared/src/lib/models.ts",
+          "hash": "10331537490659563910"
         },
         {
-          "file": "apps/api/python/test_pipeline.py",
-          "hash": "1138190066013121890"
+          "file": "libs/shared/src/lib/nc-voices.ts",
+          "hash": "11772975309935384799"
         },
         {
-          "file": "apps/api/python/worker.py",
-          "hash": "10581312308333808422"
+          "file": "libs/shared/src/lib/types.ts",
+          "hash": "6705159713867823576"
         },
         {
-          "file": "apps/api/src/main.ts",
-          "hash": "6008096442238565656",
-          "deps": [
-            "npm:fastify",
-            "npm:@fastify/cors",
-            "shared"
-          ]
+          "file": "libs/shared/src/lib/voice-samples.ts",
+          "hash": "6682499618412702865"
         },
         {
-          "file": "apps/api/src/silero-worker.ts",
-          "hash": "7998936360066642678",
-          "deps": [
-            "shared"
-          ]
+          "file": "libs/shared/src/lib/voices.ts",
+          "hash": "7650069952416754105"
         },
         {
-          "file": "apps/api/tsconfig.app.json",
-          "hash": "5726880813533895010"
-        },
-        {
-          "file": "apps/api/tsconfig.json",
-          "hash": "13690971072820468491"
-        }
-      ],
-      "desktop": [
-        {
-          "file": "apps/desktop/assets/icon.ico",
-          "hash": "17817775290605626554"
-        },
-        {
-          "file": "apps/desktop/package.json",
-          "hash": "7845489437792306504"
-        },
-        {
-          "file": "apps/desktop/project.json",
-          "hash": "17269047611648984792"
-        },
-        {
-          "file": "apps/desktop/src/main.js",
-          "hash": "651440927910378020",
-          "deps": [
-            "npm:electron"
-          ]
-        },
-        {
-          "file": "apps/desktop/src/preload.js",
-          "hash": "14764704573293920108",
-          "deps": [
-            "npm:electron"
-          ]
+          "file": "libs/shared/tsconfig.json",
+          "hash": "120683878903975165"
         }
       ],
       "ui": [
@@ -610,8 +629,23 @@
           "hash": "17862792001183021884"
         },
         {
+          "file": "libs/ui/src/Tooltip/Tooltip.module.css",
+          "hash": "12577603381901369375"
+        },
+        {
+          "file": "libs/ui/src/Tooltip/Tooltip.tsx",
+          "hash": "12335578158452545536",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/Tooltip/index.ts",
+          "hash": "12944756450594266827"
+        },
+        {
           "file": "libs/ui/src/index.ts",
-          "hash": "7547685885509120417"
+          "hash": "3238166526820248390"
         },
         {
           "file": "libs/ui/tsconfig.json",

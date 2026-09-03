@@ -41,15 +41,35 @@ pip install -r apps/api/python/requirements.txt
 
 | Действие | Команда |
 |----------|---------|
-| Запуск (web + api) | `npm start` |
-| Сборка проекта | `npm run build` |
-| Сборка Electron | `npm run dist` |
+| Запуск в dev | `npm run dev` |
+| Запуск Electron в dev | `npm run dev:e` |
+| Запуск в prod (без сборки) | `npm run prod` |
+| Запуск Electron в prod (без сборки) | `npm run prod:e` |
+| Сборка web + api | `npm run build` |
+| Сборка Electron | `npm run build:e` |
 
-После `npm start`:
+После `npm run dev` или `npm run prod`:
 - Web: http://localhost:4200
 - API: http://127.0.0.1:8000
 
-Установщик Electron появится в `dist/apps/desktop/`.
+`npm run prod` и `npm run prod:e` поднимают уже собранные артефакты из `dist/`. Сначала выполните `npm run build`.
+
+`npm run dev:e` сам поднимает API внутри Electron и Vite на порту 4200. Не запускайте одновременно `npm run dev`.
+
+Установщик и portable zip появятся в `dist_electron/`.
+
+## GitHub Releases
+
+Каждый пуш в `main` собирает Windows portable zip и обновляет пререлиз **Latest (main)** (`latest`).
+
+Версионный релиз — на тег вида `v1.0.0`:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Сборку можно запустить вручную: Actions → **Electron portable release** → **Run workflow**. Zip всегда попадает в артефакты workflow.
 
 ## Ударения
 

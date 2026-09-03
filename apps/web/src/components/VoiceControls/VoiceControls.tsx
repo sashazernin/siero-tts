@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
-import { Autocomplete, AutocompleteOption, ToggleGroup } from '@siero-tts/ui';
+import { Autocomplete, AutocompleteOption, ToggleGroup, Tooltip } from '@siero-tts/ui';
 import type { GenderFilter, LanguageFilter, LanguageOption, Voice } from '@siero-tts/shared';
-import { getGenderLabel, getVoiceKey } from '@siero-tts/shared';
+import { SILERO_CIS_LICENSE_URL, SILERO_NC_LICENSE_URL, getGenderLabel, getVoiceKey } from '@siero-tts/shared';
 import { ConvertButton } from '../ConvertButton';
 import { VoicePreviewButton } from '../VoicePreviewButton';
 import { useVoicePreview } from '../../hooks/useVoicePreview';
@@ -138,14 +138,49 @@ export function VoiceControls({
 
   return (
     <div className={styles.wrapper}>
-      <label className={styles.checkbox}>
-        <input
-          type="checkbox"
-          checked={commercialUseAllowed}
-          onChange={(event) => onCommercialUseAllowedChange(event.target.checked)}
-        />
-        <span>Разрешено коммерческое использование</span>
-      </label>
+      <div className={styles.licenseRow}>
+        <label className={styles.checkbox}>
+          <input
+            type="checkbox"
+            checked={commercialUseAllowed}
+            onChange={(event) => onCommercialUseAllowedChange(event.target.checked)}
+          />
+          <span>Разрешено коммерческое использование</span>
+        </label>
+        <Tooltip
+          content={
+            commercialUseAllowed ? (
+              <>
+                Включено: показываются только модели Silero с лицензией MIT (v5_cis_base_nostress).
+                Результат можно использовать в любых целях, в том числе коммерческих.{' '}
+                <a href={SILERO_CIS_LICENSE_URL} target="_blank" rel="noreferrer">
+                  Лицензия Silero CIS (MIT)
+                </a>
+              </>
+            ) : (
+              <>
+                Выключено: доступны также модели с лицензией CC BY-NC-SA 4.0 (v3_en, v5_ru).
+                Их можно использовать для личных, учебных и некоммерческих целей, но не в коммерции.{' '}
+                <a href={SILERO_NC_LICENSE_URL} target="_blank" rel="noreferrer">
+                  Лицензия Silero (CC BY-NC-SA 4.0)
+                </a>
+              </>
+            )
+          }
+        >
+          <button type="button" className={styles.infoButton} aria-label="Пояснение по лицензии Silero">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </Tooltip>
+      </div>
 
       <div className={styles.controls}>
         <Autocomplete

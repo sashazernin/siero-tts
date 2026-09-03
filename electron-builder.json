@@ -2,10 +2,14 @@
   "appId": "com.siero-tts.app",
   "productName": "siero-tts",
   "directories": {
-    "output": "dist/apps/desktop"
+    "output": "dist_electron"
+  },
+  "extraMetadata": {
+    "main": "apps/desktop/src/main.js"
   },
   "files": [
     "apps/desktop/src/**/*",
+    "apps/desktop/assets/**/*",
     "package.json"
   ],
   "extraResources": [
@@ -21,7 +25,16 @@
     }
   ],
   "win": {
-    "target": "nsis",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "zip",
+        "arch": ["x64"]
+      }
+    ],
     "icon": "apps/desktop/assets/icon.ico"
   },
   "mac": {

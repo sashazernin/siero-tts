@@ -14,3 +14,5 @@ export { Autocomplete } from './Autocomplete';
 export type { AutocompleteProps, AutocompleteOption } from './Autocomplete';
 export { Snackbar } from './Snackbar';
 export type { SnackbarProps } from './Snackbar';
+export { Tooltip } from './Tooltip';
+export type { TooltipProps } from './Tooltip';

@@ -10,7 +10,7 @@ export interface ConvertButtonProps {
 export function ConvertButton({ onClick, loading = false, disabled = false }: ConvertButtonProps) {
   return (
     <Button variant="contained" onClick={onClick} loading={loading} disabled={disabled}>
-      Конвертировать
+      Сгенерировать
     </Button>
   );
 }

@@ -5,6 +5,12 @@
   margin-bottom: 8px;
 }
 
+.licenseRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .checkbox {
   display: inline-flex;
   align-items: center;
@@ -20,6 +26,30 @@
   height: 16px;
   accent-color: var(--color-primary);
   cursor: pointer;
+}
+
+.infoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #f59e0b;
+  cursor: help;
+}
+
+.infoButton:hover,
+.infoButton:focus-visible {
+  color: #fbbf24;
+}
+
+.infoButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .controls {
