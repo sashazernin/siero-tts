@@ -104,6 +104,28 @@
         margin: 0;
         color: var(--color-text-secondary);
         font-size: 0.85rem;
+        text-align: center;
+        max-width: 360px;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .log-path {
+        margin: 0;
+        color: var(--color-text-secondary);
+        font-size: 0.7rem;
+        opacity: 0.75;
+        text-align: center;
+        max-width: 360px;
+        word-break: break-all;
+      }
+
+      .content.error .spinner {
+        display: none;
+      }
+
+      .content.error .status {
+        color: #f87171;
       }
 
       .spinner {
@@ -143,12 +165,30 @@
           <h1 class="title">siero-tts</h1>
         </div>
         <div class="spinner" aria-hidden="true"></div>
-        <p class="status">Загрузка моделей Silero...</p>
+        <p class="status" id="status">Загрузка моделей Silero...</p>
+        <p class="log-path" id="logPath"></p>
       </div>
     </div>
     <script>
+      const content = document.querySelector('.content');
+      const status = document.getElementById('status');
+      const logPath = document.getElementById('logPath');
+
       document.getElementById('close').addEventListener('click', () => {
         window.loaderAPI.close();
+      });
+
+      window.loaderAPI.onStatus((text) => {
+        status.textContent = text;
+      });
+
+      window.loaderAPI.onError((text) => {
+        content.classList.add('error');
+        status.textContent = text;
+      });
+
+      window.loaderAPI.onLogPath((text) => {
+        logPath.textContent = text;
       });
     </script>
   </body>

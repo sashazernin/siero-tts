@@ -1,6 +1,6 @@
-import { existsSync } from 'node:fs';
+import { appendFileSync, existsSync } from 'node:fs';
 import { EventEmitter } from 'node:events';
-import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import { createInterface } from 'node:readline';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -16,6 +16,41 @@ interface WorkerResponse {
   model?: string;
   models?: Record<string, string[]>;
   speakers?: string[];
+}
+
+interface PythonLaunch {
+  command: string;
+  prefixArgs: string[];
+}
+
+function findPython(): PythonLaunch {
+  const attempts: PythonLaunch[] =
+    process.platform === 'win32'
+      ? [
+          { command: 'python', prefixArgs: [] },
+          { command: 'py', prefixArgs: ['-3'] },
+          { command: 'python3', prefixArgs: [] },
+        ]
+      : [
+          { command: 'python3', prefixArgs: [] },
+          { command: 'python', prefixArgs: [] },
+        ];
+
+  for (const attempt of attempts) {
+    const result = spawnSync(
+      attempt.command,
+      [...attempt.prefixArgs, '-c', 'import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)'],
+      { windowsHide: true, timeout: 8000, encoding: 'utf8' },
+    );
+
+    if (result.status === 0) {
+      return attempt;
+    }
+  }
+
+  throw new Error(
+    'Python 3.10+ не найден. Установите Python и пакеты: pip install -r apps/api/python/requirements.txt',
+  );
 }
 
 interface PendingRequest {
@@ -34,7 +69,7 @@ export class SileroWorker extends EventEmitter {
       return;
     }
 
-    const pythonCommand = process.platform === 'win32' ? 'python' : 'python3';
+    const python = findPython();
     const workerCandidates = [
       path.join(__dirname, 'python', 'worker.py'),
       path.join(__dirname, '..', 'python', 'worker.py'),
@@ -45,7 +80,7 @@ export class SileroWorker extends EventEmitter {
       throw new Error('Silero worker.py not found');
     }
 
-    this.process = spawn(pythonCommand, [workerPath], {
+    this.process = spawn(python.command, [...python.prefixArgs, workerPath], {
       cwd: path.dirname(workerPath),
       stdio: ['pipe', 'pipe', 'pipe'],
       windowsHide: true,
@@ -102,7 +137,12 @@ export class SileroWorker extends EventEmitter {
     });
 
     this.process.stderr.on('data', (chunk) => {
-      console.error('[silero-worker]', chunk.toString());
+      const text = chunk.toString();
+      console.error('[silero-worker]', text);
+      const logFile = process.env.SIERO_LOG_FILE;
+      if (logFile) {
+        appendFileSync(logFile, `[silero-worker] ${text}`);
+      }
     });
 
     this.process.on('exit', (code) => {
@@ -115,7 +155,15 @@ export class SileroWorker extends EventEmitter {
     });
 
     await new Promise<void>((resolve, reject) => {
-      const timeout = setTimeout(() => reject(new Error('Silero worker startup timeout')), 120000);
+      const timeout = setTimeout(
+        () =>
+          reject(
+            new Error(
+              'Silero не запустился за 10 минут. На другом ПК нужны Python 3.10+ и pip install -r apps/api/python/requirements.txt, плюс интернет для первой загрузки моделей.',
+            ),
+          ),
+        10 * 60 * 1000,
+      );
 
       this.once('ready', () => {
         clearTimeout(timeout);
@@ -155,6 +203,10 @@ export class SileroWorker extends EventEmitter {
 
       this.process?.stdin.write(`${payload}\n`, 'utf8');
     });
+  }
+
+  isReady(): boolean {
+    return this.ready;
   }
 
   getSpeakers(modelId?: ModelId): ReadonlySet<string> {

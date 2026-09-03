@@ -5,6 +5,7 @@
     "output": "dist_electron"
   },
   "extraMetadata": {
+    "name": "siero-tts",
     "main": "apps/desktop/src/main.js"
   },
   "files": [

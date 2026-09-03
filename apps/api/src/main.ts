@@ -21,6 +21,7 @@ interface TtsBody {
 }
 
 const worker = new SileroWorker();
+let workerError: string | null = null;
 
 function filterAvailableVoices() {
   const loadedModels = worker.getLoadedModels();
@@ -40,18 +41,21 @@ function filterAvailableVoices() {
 }
 
 async function buildServer() {
-  const app = Fastify({ logger: true });
+  const app = Fastify({
+    logger: true,
+  });
 
   await app.register(cors, { origin: true });
 
   app.get('/api/health', async () => ({
-    status: 'ok',
+    status: workerError ? 'error' : worker.isReady() ? 'ok' : 'loading',
+    ready: worker.isReady(),
+    detail: workerError,
     models: Object.values(MODELS).map((model) => ({
       id: model.id,
       commercialAllowed: model.commercialAllowed,
       loaded: worker.getSpeakers(model.id).size > 0,
     })),
-    ready: true,
   }));
 
   app.get('/api/voices', async () => filterAvailableVoices());
@@ -74,6 +78,12 @@ async function buildServer() {
       return reply.code(400).send({ detail: 'Unknown speaker' });
     }
 
+    if (!worker.isReady()) {
+      return reply.code(503).send({
+        detail: workerError ?? 'Модели Silero ещё загружаются. Подождите.',
+      });
+    }
+
     try {
       const audio = await worker.synthesize(
         trimmedText,
@@ -92,8 +102,6 @@ async function buildServer() {
 }
 
 async function start() {
-  await worker.start();
-
   const app = await buildServer();
 
   const shutdown = async () => {
@@ -106,6 +114,11 @@ async function start() {
   process.on('SIGTERM', shutdown);
 
   await app.listen({ port: PORT, host: HOST });
+
+  worker.start().catch((error) => {
+    workerError = error instanceof Error ? error.message : String(error);
+    console.error(workerError);
+  });
 }
 
 start().catch((error) => {

@@ -1,7 +1,10 @@
 const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
+const fs = require('fs');
 const http = require('http');
+
+app.setName('siero-tts');
 
 const BACKEND_PORT = 8000;
 const BACKEND_URL = `http://127.0.0.1:${BACKEND_PORT}`;
@@ -9,36 +12,68 @@ const workspaceRoot = path.join(__dirname, '..', '..', '..');
 const isPackaged = app.isPackaged;
 const isProd = isPackaged || process.argv.includes('--prod');
 const APP_ICON = path.join(__dirname, '..', 'assets', 'icon.ico');
-const LOADER_WIDTH = 360;
-const LOADER_HEIGHT = 220;
+const LOADER_WIDTH = 420;
+const LOADER_HEIGHT = 340;
 
 let mainWindow = null;
 let loaderWindow = null;
 let backendProcess = null;
+let logPath = null;
+
+function getLogPath() {
+  if (!logPath) {
+    const logDir = app.getPath('userData');
+    fs.mkdirSync(logDir, { recursive: true });
+    logPath = path.join(logDir, 'siero-tts.log');
+  }
+
+  return logPath;
+}
+
+function writeLog(message) {
+  const line = `[${new Date().toISOString()}] ${message}\n`;
+  try {
+    fs.appendFileSync(getLogPath(), line);
+  } catch {
+    // ignore disk errors
+  }
+
+  console.error(message);
+}
 
 function getBackendCommand() {
-  const nodeCommand = process.platform === 'win32' ? 'node.exe' : 'node';
-
   if (!isProd) {
     return {
       command: process.platform === 'win32' ? 'npx.cmd' : 'npx',
       args: ['nx', 'serve', 'api'],
       cwd: workspaceRoot,
+      shell: true,
+      extraEnv: {},
     };
   }
 
+  const apiDir = isPackaged
+    ? path.join(process.resourcesPath, 'bin', 'api')
+    : path.join(workspaceRoot, 'dist', 'apps', 'api');
+
   if (isPackaged) {
     return {
-      command: nodeCommand,
-      args: ['main.js'],
-      cwd: path.join(process.resourcesPath, 'bin', 'api'),
+      command: process.execPath,
+      args: [path.join(apiDir, 'main.js')],
+      cwd: apiDir,
+      shell: false,
+      extraEnv: {
+        ELECTRON_RUN_AS_NODE: '1',
+      },
     };
   }
 
   return {
-    command: nodeCommand,
+    command: process.platform === 'win32' ? 'node.exe' : 'node',
     args: ['main.js'],
-    cwd: path.join(workspaceRoot, 'dist', 'apps', 'api'),
+    cwd: apiDir,
+    shell: process.platform === 'win32',
+    extraEnv: {},
   };
 }
 
@@ -48,6 +83,14 @@ function getWebIndexPath() {
   }
 
   return path.join(workspaceRoot, 'dist', 'apps', 'web', 'index.html');
+}
+
+function sendLoader(channel, payload) {
+  if (!loaderWindow || loaderWindow.isDestroyed()) {
+    return;
+  }
+
+  loaderWindow.webContents.send(channel, payload);
 }
 
 function registerWindowShortcuts(win) {
@@ -77,19 +120,37 @@ function registerWindowShortcuts(win) {
   });
 }
 
-function waitForBackend(timeoutMs = 120000) {
+function waitForBackend(timeoutMs = 10 * 60 * 1000) {
   const startedAt = Date.now();
 
   return new Promise((resolve, reject) => {
     const check = () => {
       const request = http.get(`${BACKEND_URL}/api/health`, (response) => {
-        response.resume();
-        if (response.statusCode === 200) {
-          resolve();
-          return;
-        }
+        let body = '';
+        response.setEncoding('utf8');
+        response.on('data', (chunk) => {
+          body += chunk;
+        });
+        response.on('end', () => {
+          try {
+            const data = JSON.parse(body);
 
-        retry();
+            if (data.status === 'error') {
+              reject(new Error(data.detail || 'API error'));
+              return;
+            }
+
+            if (data.ready) {
+              resolve();
+              return;
+            }
+
+            sendLoader('loader-status', data.detail || 'Загрузка моделей Silero...');
+            retry();
+          } catch {
+            retry();
+          }
+        });
       });
 
       request.on('error', retry);
@@ -101,7 +162,11 @@ function waitForBackend(timeoutMs = 120000) {
 
     const retry = () => {
       if (Date.now() - startedAt > timeoutMs) {
-        reject(new Error('Backend startup timeout'));
+        reject(
+          new Error(
+            `API не запустился за 10 минут. Лог: ${getLogPath()}. Нужны Python 3.10+ и pip install -r apps/api/python/requirements.txt`,
+          ),
+        );
         return;
       }
 
@@ -113,17 +178,49 @@ function waitForBackend(timeoutMs = 120000) {
 }
 
 function startBackend() {
-  const { command, args, cwd } = getBackendCommand();
+  const { command, args, cwd, shell, extraEnv } = getBackendCommand();
+  const currentLogPath = getLogPath();
+  writeLog(`Starting API: ${command} ${args.join(' ')} cwd=${cwd}`);
+  sendLoader('loader-log-path', currentLogPath);
+
+  const logStream = fs.createWriteStream(currentLogPath, { flags: 'a' });
 
   backendProcess = spawn(command, args, {
     cwd,
-    stdio: 'inherit',
+    stdio: ['ignore', 'pipe', 'pipe'],
     windowsHide: true,
-    shell: process.platform === 'win32',
+    shell,
+    env: {
+      ...process.env,
+      SIERO_LOG_FILE: currentLogPath,
+      PORT: String(BACKEND_PORT),
+      ...extraEnv,
+    },
+  });
+
+  const writeBackendLog = (chunk) => {
+    logStream.write(chunk);
+  };
+
+  backendProcess.stdout?.on('data', writeBackendLog);
+  backendProcess.stderr?.on('data', writeBackendLog);
+  backendProcess.on('close', () => {
+    logStream.end();
   });
 
   backendProcess.on('error', (error) => {
-    console.error('Failed to start backend:', error);
+    writeLog(`Failed to start backend: ${error.message}`);
+    sendLoader('loader-error', `${error.message}\nЛог: ${currentLogPath}`);
+  });
+
+  backendProcess.on('exit', (code) => {
+    writeLog(`API exited with code ${code ?? 'unknown'}`);
+    if (!mainWindow) {
+      sendLoader(
+        'loader-error',
+        `API завершился с кодом ${code ?? 'unknown'}.\nЛог: ${currentLogPath}`,
+      );
+    }
   });
 }
 
@@ -175,6 +272,7 @@ async function createLoaderWindow() {
   });
 
   await loaderWindow.loadFile(path.join(__dirname, 'loader.html'));
+  sendLoader('loader-log-path', getLogPath());
   loaderWindow.show();
 }
 
@@ -218,6 +316,7 @@ ipcMain.on('loader-close', () => {
 
 app.whenReady().then(async () => {
   Menu.setApplicationMenu(null);
+  writeLog('App started');
 
   try {
     await createLoaderWindow();
@@ -225,9 +324,9 @@ app.whenReady().then(async () => {
     await waitForBackend();
     await createWindow();
   } catch (error) {
-    console.error(error);
-    stopBackend();
-    app.quit();
+    const message = error instanceof Error ? error.message : String(error);
+    writeLog(message);
+    sendLoader('loader-error', `${message}\nЛог: ${getLogPath()}`);
   }
 });
 
