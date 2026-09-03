@@ -1,10 +1,11 @@
 import { appendFileSync, existsSync } from 'node:fs';
 import { EventEmitter } from 'node:events';
-import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import { createInterface } from 'node:readline';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import type { ModelId } from '@siero-tts/shared';
+import { resolvePython, type PythonLaunch } from './ensure-python';
 
 interface WorkerResponse {
   id?: string;
@@ -18,41 +19,6 @@ interface WorkerResponse {
   speakers?: string[];
 }
 
-interface PythonLaunch {
-  command: string;
-  prefixArgs: string[];
-}
-
-function findPython(): PythonLaunch {
-  const attempts: PythonLaunch[] =
-    process.platform === 'win32'
-      ? [
-          { command: 'python', prefixArgs: [] },
-          { command: 'py', prefixArgs: ['-3'] },
-          { command: 'python3', prefixArgs: [] },
-        ]
-      : [
-          { command: 'python3', prefixArgs: [] },
-          { command: 'python', prefixArgs: [] },
-        ];
-
-  for (const attempt of attempts) {
-    const result = spawnSync(
-      attempt.command,
-      [...attempt.prefixArgs, '-c', 'import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)'],
-      { windowsHide: true, timeout: 8000, encoding: 'utf8' },
-    );
-
-    if (result.status === 0) {
-      return attempt;
-    }
-  }
-
-  throw new Error(
-    'Python 3.10+ не найден. Установите Python и пакеты: pip install -r apps/api/python/requirements.txt',
-  );
-}
-
 interface PendingRequest {
   resolve: (buffer: Buffer) => void;
   reject: (error: Error) => void;
@@ -61,15 +27,19 @@ interface PendingRequest {
 export class SileroWorker extends EventEmitter {
   private process: ChildProcessWithoutNullStreams | null = null;
   private ready = false;
+  private status = 'Запуск...';
   private speakersByModel = new Map<ModelId, Set<string>>();
   private readonly pending = new Map<string, PendingRequest>();
+
+  getStatus(): string {
+    return this.status;
+  }
 
   async start(): Promise<void> {
     if (this.process) {
       return;
     }
 
-    const python = findPython();
     const workerCandidates = [
       path.join(__dirname, 'python', 'worker.py'),
       path.join(__dirname, '..', 'python', 'worker.py'),
@@ -80,12 +50,21 @@ export class SileroWorker extends EventEmitter {
       throw new Error('Silero worker.py not found');
     }
 
+    const requirementsPath = path.join(path.dirname(workerPath), 'requirements.txt');
+    this.status = 'Поиск Python...';
+    const python: PythonLaunch = await resolvePython(requirementsPath, (message) => {
+      this.status = message;
+    });
+
+    this.status = 'Загрузка моделей Silero...';
+    const pythonDir = path.isAbsolute(python.command) ? path.dirname(python.command) : null;
     this.process = spawn(python.command, [...python.prefixArgs, workerPath], {
       cwd: path.dirname(workerPath),
       stdio: ['pipe', 'pipe', 'pipe'],
       windowsHide: true,
       env: {
         ...process.env,
+        PATH: pythonDir ? `${pythonDir}${path.delimiter}${process.env.PATH ?? ''}` : process.env.PATH,
         PYTHONIOENCODING: 'utf-8',
         PYTHONUTF8: '1',
       },
@@ -159,10 +138,10 @@ export class SileroWorker extends EventEmitter {
         () =>
           reject(
             new Error(
-              'Silero не запустился за 10 минут. На другом ПК нужны Python 3.10+ и pip install -r apps/api/python/requirements.txt, плюс интернет для первой загрузки моделей.',
+              'Silero не запустился за 15 минут. Нужен интернет для первой загрузки моделей.',
             ),
           ),
-        10 * 60 * 1000,
+        15 * 60 * 1000,
       );
 
       this.once('ready', () => {

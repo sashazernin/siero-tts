@@ -120,7 +120,7 @@ function registerWindowShortcuts(win) {
   });
 }
 
-function waitForBackend(timeoutMs = 10 * 60 * 1000) {
+function waitForBackend(timeoutMs = 45 * 60 * 1000) {
   const startedAt = Date.now();
 
   return new Promise((resolve, reject) => {
@@ -164,7 +164,7 @@ function waitForBackend(timeoutMs = 10 * 60 * 1000) {
       if (Date.now() - startedAt > timeoutMs) {
         reject(
           new Error(
-            `API не запустился за 10 минут. Лог: ${getLogPath()}. Нужны Python 3.10+ и pip install -r apps/api/python/requirements.txt`,
+            `API не запустился за 45 минут. Лог: ${getLogPath()}`,
           ),
         );
         return;
@@ -193,6 +193,7 @@ function startBackend() {
     env: {
       ...process.env,
       SIERO_LOG_FILE: currentLogPath,
+      SIERO_DATA_DIR: app.getPath('userData'),
       PORT: String(BACKEND_PORT),
       ...extraEnv,
     },

@@ -50,7 +50,7 @@ async function buildServer() {
   app.get('/api/health', async () => ({
     status: workerError ? 'error' : worker.isReady() ? 'ok' : 'loading',
     ready: worker.isReady(),
-    detail: workerError,
+    detail: workerError ?? (worker.isReady() ? null : worker.getStatus()),
     models: Object.values(MODELS).map((model) => ({
       id: model.id,
       commercialAllowed: model.commercialAllowed,
