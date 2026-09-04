@@ -12,8 +12,9 @@
     "prod": "concurrently -k -n api,web \"node dist/apps/api/main.js\" \"wait-on -t 120000 http-get://127.0.0.1:8000/api/health && vite preview --config apps/web/vite.config.ts --port 4200 --host 127.0.0.1\"",
     "prod:e": "electron apps/desktop/src/main.js --prod",
     "build": "nx run-many -t build -p web,api --parallel=2",
-    "build:e": "nx build desktop",
-    "build:e:zip": "node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.json --win zip"
+    "bundle:python": "node apps/desktop/scripts/prepare-python-runtime.js",
+    "build:e": "nx run-many -t build -p web,api --parallel=2 && node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.config.js",
+    "build:e:zip": "nx run-many -t build -p web,api --parallel=2 && node apps/desktop/scripts/prepare-pack.js && electron-builder --config electron-builder.config.js --win zip"
   },
   "dependencies": {
     "react": "^19.2.8",

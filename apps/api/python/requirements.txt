@@ -1,5 +1,4 @@
-silero
-silero-stress
-torch
-torchaudio
-numpy
+silero==0.5.5
+silero-stress==1.4
+numpy>=1.26,<3
+omegaconf==2.3.0

@@ -14,6 +14,7 @@ interface WorkerResponse {
   audio_base64?: string;
   error?: string;
   event?: string;
+  detail?: string;
   model?: string;
   models?: Record<string, string[]>;
   speakers?: string[];
@@ -56,7 +57,7 @@ export class SileroWorker extends EventEmitter {
       this.status = message;
     });
 
-    this.status = 'Загрузка моделей Silero...';
+    this.status = 'Запуск...';
     const pythonDir = path.isAbsolute(python.command) ? path.dirname(python.command) : null;
     this.process = spawn(python.command, [...python.prefixArgs, workerPath], {
       cwd: path.dirname(workerPath),
@@ -73,46 +74,64 @@ export class SileroWorker extends EventEmitter {
     const rl = createInterface({ input: this.process.stdout });
 
     rl.on('line', (line) => {
-      try {
-        const message = JSON.parse(line) as WorkerResponse;
-
-        if (message.event === 'ready') {
-          this.ready = true;
-          this.speakersByModel.clear();
-
-          Object.entries(message.models ?? {}).forEach(([modelId, speakers]) => {
-            this.speakersByModel.set(modelId as ModelId, new Set(speakers));
-          });
-
-          this.emit('ready', message.models);
-          return;
-        }
-
-        if (message.event === 'model_loaded' && message.model && message.speakers) {
-          this.speakersByModel.set(message.model as ModelId, new Set(message.speakers));
-          return;
-        }
-
-        if (!message.id) {
-          return;
-        }
-
-        const pending = this.pending.get(message.id);
-        if (!pending) {
-          return;
-        }
-
-        this.pending.delete(message.id);
-
-        if (!message.ok || !message.audio_base64) {
-          pending.reject(new Error(message.error ?? 'Synthesis failed'));
-          return;
-        }
-
-        pending.resolve(Buffer.from(message.audio_base64, 'base64'));
-      } catch (error) {
-        this.emit('error', error);
+      const trimmed = line.trim();
+      if (!trimmed) {
+        return;
       }
+
+      let message: WorkerResponse;
+      try {
+        message = JSON.parse(trimmed) as WorkerResponse;
+      } catch {
+        console.error('[silero-worker] non-json stdout:', trimmed);
+        return;
+      }
+
+      if (message.event === 'status' && message.detail) {
+        this.status = message.detail;
+        return;
+      }
+
+      if (message.event === 'failed') {
+        this.emit('startup-error', new Error(message.error ?? 'Silero worker failed'));
+        return;
+      }
+
+      if (message.event === 'ready') {
+        this.ready = true;
+        this.status = 'Готово';
+        this.speakersByModel.clear();
+
+        Object.entries(message.models ?? {}).forEach(([modelId, speakers]) => {
+          this.speakersByModel.set(modelId as ModelId, new Set(speakers));
+        });
+
+        this.emit('ready', message.models);
+        return;
+      }
+
+      if (message.event === 'model_loaded' && message.model && message.speakers) {
+        this.speakersByModel.set(message.model as ModelId, new Set(message.speakers));
+        return;
+      }
+
+      if (!message.id) {
+        return;
+      }
+
+      const pending = this.pending.get(message.id);
+      if (!pending) {
+        return;
+      }
+
+      this.pending.delete(message.id);
+
+      if (!message.ok || !message.audio_base64) {
+        pending.reject(new Error(message.error ?? 'Synthesis failed'));
+        return;
+      }
+
+      pending.resolve(Buffer.from(message.audio_base64, 'base64'));
     });
 
     this.process.stderr.on('data', (chunk) => {
@@ -125,12 +144,20 @@ export class SileroWorker extends EventEmitter {
     });
 
     this.process.on('exit', (code) => {
+      const wasReady = this.ready;
       this.ready = false;
       this.process = null;
       this.pending.forEach((pending) => {
         pending.reject(new Error(`Silero worker exited with code ${code ?? 'unknown'}`));
       });
       this.pending.clear();
+
+      if (!wasReady) {
+        this.emit(
+          'startup-error',
+          new Error(`Процесс Silero завершился с кодом ${code ?? 'unknown'} до загрузки моделей`),
+        );
+      }
     });
 
     await new Promise<void>((resolve, reject) => {
@@ -138,7 +165,7 @@ export class SileroWorker extends EventEmitter {
         () =>
           reject(
             new Error(
-              'Silero не запустился за 15 минут. Нужен интернет для первой загрузки моделей.',
+              'Silero не загрузил модели за 15 минут. При первом запуске нужен интернет (models.silero.ai). Если модели уже качались — подождите или проверьте лог: зависшая загрузка не повторяется, пока файл .pt на диске есть.',
             ),
           ),
         15 * 60 * 1000,
@@ -149,7 +176,7 @@ export class SileroWorker extends EventEmitter {
         resolve();
       });
 
-      this.once('error', (error) => {
+      this.once('startup-error', (error) => {
         clearTimeout(timeout);
         reject(error);
       });

@@ -43,6 +43,24 @@ function filterAvailableVoices() {
 async function buildServer() {
   const app = Fastify({
     logger: true,
+    disableRequestLogging: true,
+  });
+
+  app.addHook('onResponse', (request, reply, done) => {
+    if (request.url.split('?')[0] === '/api/health') {
+      done();
+      return;
+    }
+
+    request.log.info(
+      {
+        req: { method: request.method, url: request.url },
+        res: { statusCode: reply.statusCode },
+        responseTime: reply.elapsedTime,
+      },
+      'request completed',
+    );
+    done();
   });
 
   await app.register(cors, { origin: true });
@@ -80,7 +98,7 @@ async function buildServer() {
 
     if (!worker.isReady()) {
       return reply.code(503).send({
-        detail: workerError ?? 'Модели Silero ещё загружаются. Подождите.',
+        detail: workerError ?? 'Приложение ещё запускается. Подождите.',
       });
     }
 

@@ -1,4 +1,4 @@
-import { createWriteStream, existsSync, mkdirSync, rmSync } from 'node:fs';
+import { copyFileSync, createWriteStream, existsSync, mkdirSync, rmSync } from 'node:fs';
 import { spawn, spawnSync } from 'node:child_process';
 import https from 'node:https';
 import http from 'node:http';
@@ -15,8 +15,17 @@ export type StatusFn = (message: string) => void;
 
 const PYTHON_TAG = '20260901';
 const PYTHON_VERSION = '3.12.14';
-const IMPORT_CHECK =
-  'import numpy, torch, torchaudio, silero, silero_stress; raise SystemExit(0)';
+const IMPORT_CHECK = [
+  'import traceback',
+  'try:',
+  '    import numpy',
+  '    import torch',
+  '    from silero import silero_tts',
+  '    from silero_stress import load_accentor',
+  'except Exception:',
+  '    traceback.print_exc()',
+  '    raise SystemExit(1)',
+].join('\n');
 
 function log(message: string): void {
   console.error(`[python-runtime] ${message}`);
@@ -51,24 +60,154 @@ function launchFromBinary(command: string, prefixArgs: string[] = []): PythonLau
   return { command, prefixArgs };
 }
 
+function pythonEnv(launch: PythonLaunch): NodeJS.ProcessEnv {
+  const extra: string[] = [];
+
+  extra.push(path.dirname(process.execPath));
+
+  if (path.isAbsolute(launch.command)) {
+    const dir = path.dirname(launch.command);
+    extra.push(
+      dir,
+      path.join(dir, 'Scripts'),
+      path.join(dir, 'Lib', 'site-packages', 'torch', 'lib'),
+    );
+  }
+
+  return {
+    ...process.env,
+    PYTHONUTF8: '1',
+    PYTHONIOENCODING: 'utf-8',
+    PATH: [...extra, process.env.PATH ?? ''].join(path.delimiter),
+  };
+}
+
 function isPython310(launch: PythonLaunch): boolean {
   const result = spawnSync(
     launch.command,
     [...launch.prefixArgs, '-c', 'import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)'],
-    { windowsHide: true, timeout: 8000, encoding: 'utf8' },
+    { windowsHide: true, timeout: 8000, encoding: 'utf8', env: pythonEnv(launch) },
   );
 
   return result.status === 0;
 }
 
-function hasPackages(launch: PythonLaunch): boolean {
+function packagesError(launch: PythonLaunch): string | null {
   const result = spawnSync(launch.command, [...launch.prefixArgs, '-c', IMPORT_CHECK], {
     windowsHide: true,
-    timeout: 30000,
+    timeout: 120000,
     encoding: 'utf8',
+    env: pythonEnv(launch),
   });
 
-  return result.status === 0;
+  if (result.status === 0) {
+    return null;
+  }
+
+  const detail = [result.stderr, result.stdout, result.error?.message]
+    .filter(Boolean)
+    .join('\n')
+    .trim();
+
+  if (detail) {
+    log(detail);
+  }
+
+  return detail || `import check exited ${result.status ?? result.signal ?? 'unknown'}`;
+}
+
+function hasPackages(launch: PythonLaunch): boolean {
+  return packagesError(launch) === null;
+}
+
+function needsVcRedist(error: string): boolean {
+  return /WinError 126|Visual C\+\+ Redistributable|c10\.dll/i.test(error);
+}
+
+function copyCrtToTorch(launch: PythonLaunch): void {
+  if (process.platform !== 'win32' || !path.isAbsolute(launch.command)) {
+    return;
+  }
+
+  const torchLib = path.join(path.dirname(launch.command), 'Lib', 'site-packages', 'torch', 'lib');
+  if (!existsSync(torchLib)) {
+    return;
+  }
+
+  const sources = [
+    process.env.SystemRoot ? path.join(process.env.SystemRoot, 'System32') : '',
+    path.dirname(process.execPath),
+  ].filter(Boolean);
+
+  const names = [
+    'vcruntime140.dll',
+    'vcruntime140_1.dll',
+    'msvcp140.dll',
+    'msvcp140_1.dll',
+    'msvcp140_2.dll',
+    'concrt140.dll',
+    'vccorlib140.dll',
+  ];
+
+  for (const name of names) {
+    const dest = path.join(torchLib, name);
+    if (existsSync(dest)) {
+      continue;
+    }
+
+    for (const sourceDir of sources) {
+      const src = path.join(sourceDir, name);
+      if (existsSync(src)) {
+        copyFileSync(src, dest);
+        log(`Copied ${name} -> torch/lib`);
+        break;
+      }
+    }
+  }
+}
+
+async function installVcRedist(onStatus: StatusFn): Promise<void> {
+  const tmpDir = path.join(getDataDir(), 'tmp');
+  mkdirSync(tmpDir, { recursive: true });
+  const installer = path.join(tmpDir, 'vc_redist.x64.exe');
+
+  onStatus('Скачивание Visual C++ Redistributable...');
+  await downloadFile('https://aka.ms/vs/17/release/vc_redist.x64.exe', installer, onStatus);
+
+  onStatus('Установка Visual C++ Redistributable...');
+  await new Promise<void>((resolve, reject) => {
+    const child = spawn(installer, ['/install', '/quiet', '/norestart'], {
+      windowsHide: true,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    const timer = setTimeout(() => {
+      child.kill();
+      reject(new Error('Установка VC++ Redistributable зависла'));
+    }, 5 * 60 * 1000);
+
+    child.stdout?.on('data', (chunk) => log(chunk.toString()));
+    child.stderr?.on('data', (chunk) => log(chunk.toString()));
+
+    child.on('error', (error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+
+    child.on('exit', (code) => {
+      clearTimeout(timer);
+      if (code === 0 || code === 1638 || code === 1641 || code === 3010) {
+        resolve();
+        return;
+      }
+
+      reject(
+        new Error(
+          `VC++ Redistributable завершился с кодом ${code ?? 'unknown'}. Установите https://aka.ms/vs/17/release/vc_redist.x64.exe`,
+        ),
+      );
+    });
+  });
 }
 
 function findSystemPython(): PythonLaunch | null {
@@ -184,11 +323,30 @@ async function downloadFile(url: string, dest: string, onStatus: StatusFn): Prom
   });
 }
 
+function updatePipStatus(text: string, onStatus: StatusFn): void {
+  for (const rawLine of text.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    const collecting = line.match(/^Collecting (\S+)/i);
+    const downloading = line.match(/^Downloading (\S+)/i);
+
+    if (collecting) {
+      onStatus(`Установка пакета: ${collecting[1]}`);
+    } else if (downloading) {
+      onStatus(`Скачивание: ${downloading[1]}`);
+    }
+  }
+}
+
 function run(command: string, args: string[], onStatus: StatusFn, timeoutMs: number): Promise<void> {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       windowsHide: true,
       stdio: ['ignore', 'pipe', 'pipe'],
+      env: {
+        ...pythonEnv({ command, prefixArgs: [] }),
+        PIP_DISABLE_PIP_VERSION_CHECK: '1',
+        PIP_PROGRESS_BAR: 'off',
+      },
     });
 
     const timer = setTimeout(() => {
@@ -196,8 +354,14 @@ function run(command: string, args: string[], onStatus: StatusFn, timeoutMs: num
       reject(new Error(`Команда зависла: ${command}`));
     }, timeoutMs);
 
-    child.stdout?.on('data', (chunk) => log(chunk.toString()));
-    child.stderr?.on('data', (chunk) => log(chunk.toString()));
+    const onChunk = (chunk: Buffer) => {
+      const text = chunk.toString();
+      log(text);
+      updatePipStatus(text, onStatus);
+    };
+
+    child.stdout?.on('data', onChunk);
+    child.stderr?.on('data', onChunk);
 
     child.on('error', (error) => {
       clearTimeout(timer);
@@ -264,8 +428,24 @@ async function ensurePackages(
   requirementsPath: string,
   onStatus: StatusFn,
 ): Promise<void> {
-  if (hasPackages(launch)) {
+  copyCrtToTorch(launch);
+  let existingError = packagesError(launch);
+  if (!existingError) {
     return;
+  }
+
+  if (process.platform === 'win32' && needsVcRedist(existingError)) {
+    onStatus('Нужен Visual C++ Redistributable...');
+    try {
+      await installVcRedist(onStatus);
+      copyCrtToTorch(launch);
+      existingError = packagesError(launch);
+      if (!existingError) {
+        return;
+      }
+    } catch (error) {
+      log(`VC++ Redistributable: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
 
   onStatus('Подготовка pip...');
@@ -275,22 +455,54 @@ async function ensurePackages(
     log(`ensurepip: ${error instanceof Error ? error.message : String(error)}`);
   }
 
-  onStatus('Установка пакетов Python (torch, silero)...');
+  onStatus('Установка pip...');
   await run(
     launch.command,
     [...launch.prefixArgs, '-m', 'pip', 'install', '--upgrade', 'pip'],
     onStatus,
     5 * 60 * 1000,
   );
+
+  onStatus('Установка PyTorch (CPU)...');
   await run(
     launch.command,
-    [...launch.prefixArgs, '-m', 'pip', 'install', '-r', requirementsPath],
+    [
+      ...launch.prefixArgs,
+      '-m',
+      'pip',
+      'install',
+      '--prefer-binary',
+      'torch==2.6.0',
+      'torchaudio==2.6.0',
+      '--index-url',
+      'https://download.pytorch.org/whl/cpu',
+    ],
     onStatus,
     30 * 60 * 1000,
   );
 
-  if (!hasPackages(launch)) {
-    throw new Error('Пакеты Python установились с ошибкой. Проверьте лог.');
+  onStatus('Установка Silero...');
+  await run(
+    launch.command,
+    [...launch.prefixArgs, '-m', 'pip', 'install', '--prefer-binary', '-r', requirementsPath],
+    onStatus,
+    20 * 60 * 1000,
+  );
+
+  copyCrtToTorch(launch);
+  let importError = packagesError(launch);
+  if (importError && process.platform === 'win32' && needsVcRedist(importError)) {
+    try {
+      await installVcRedist(onStatus);
+      copyCrtToTorch(launch);
+      importError = packagesError(launch);
+    } catch (error) {
+      log(`VC++ Redistributable: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  }
+
+  if (importError) {
+    throw new Error(`Пакеты Python не импортируются:\n${importError}`);
   }
 }
 
@@ -301,10 +513,13 @@ export async function resolvePython(requirementsPath: string, onStatus: StatusFn
   const envPython = process.env.SIERO_PYTHON;
   if (envPython && existsSync(envPython)) {
     const launch = launchFromBinary(envPython);
-    if (isPython310(launch)) {
-      await ensurePackages(launch, requirementsPath, onStatus);
-      return launch;
+    if (!isPython310(launch)) {
+      throw new Error(`SIERO_PYTHON не запускается: ${envPython}`);
     }
+
+    onStatus('Проверка встроенного Python...');
+    await ensurePackages(launch, requirementsPath, onStatus);
+    return launch;
   }
 
   const managedBinary = pythonBinary(runtimeRoot());

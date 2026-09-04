@@ -22,6 +22,12 @@
         "bundle": true,
         "thirdParty": true,
         "main": "apps/api/src/main.ts",
+        "outputFileName": "main.js",
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".js"
+          }
+        },
         "tsConfig": "apps/api/tsconfig.app.json",
         "assets": [
           {

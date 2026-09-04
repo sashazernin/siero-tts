@@ -10,7 +10,7 @@
 /coverage
 /tmp
 .deps
-.nx/cache
+.nx
 
 # python
 apps/api/python/__pycache__/

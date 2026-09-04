@@ -199,8 +199,14 @@ def write_message(payload: dict) -> None:
 
 def main() -> None:
     torch.set_num_threads(4)
-    loaded_models = load_initial_models()
-    preload_accentors()
+    try:
+        write_message({"event": "status", "detail": "Запуск..."})
+        loaded_models = load_initial_models()
+        preload_accentors()
+    except Exception as exc:
+        write_message({"event": "failed", "error": str(exc)})
+        raise
+
     write_message({"event": "ready", "models": loaded_models})
 
     for line in sys.stdin:

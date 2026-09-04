@@ -41,6 +41,37 @@ function writeLog(message) {
   console.error(message);
 }
 
+function listDir(dir) {
+  try {
+    return fs.readdirSync(dir).join(', ');
+  } catch {
+    return '(недоступно)';
+  }
+}
+
+function getBundledPythonPath() {
+  const names =
+    process.platform === 'win32' ? ['python.exe'] : [path.join('bin', 'python3'), path.join('bin', 'python')];
+  const roots = [];
+
+  if (isPackaged) {
+    roots.push(path.join(process.resourcesPath, 'python'));
+  }
+
+  roots.push(path.join(workspaceRoot, 'dist', 'bundled-runtime', 'python'));
+
+  for (const root of roots) {
+    for (const name of names) {
+      const candidate = path.join(root, name);
+      if (fs.existsSync(candidate)) {
+        return candidate;
+      }
+    }
+  }
+
+  return null;
+}
+
 function getBackendCommand() {
   if (!isProd) {
     return {
@@ -55,15 +86,32 @@ function getBackendCommand() {
   const apiDir = isPackaged
     ? path.join(process.resourcesPath, 'bin', 'api')
     : path.join(workspaceRoot, 'dist', 'apps', 'api');
+  const apiMain = path.join(apiDir, 'main.js');
+  const bundledPython = getBundledPythonPath();
+
+  if (!fs.existsSync(apiMain)) {
+    throw new Error(
+      `Не найден API: ${apiMain}. resources=${process.resourcesPath} [${listDir(process.resourcesPath)}]`,
+    );
+  }
+
+  if (isPackaged && !bundledPython) {
+    throw new Error(
+      `Не найден встроенный Python в ${path.join(process.resourcesPath, 'python')}. Пересоберите portable.`,
+    );
+  }
+
+  const pythonEnv = bundledPython ? { SIERO_PYTHON: bundledPython } : {};
 
   if (isPackaged) {
     return {
       command: process.execPath,
-      args: [path.join(apiDir, 'main.js')],
+      args: [apiMain],
       cwd: apiDir,
       shell: false,
       extraEnv: {
         ELECTRON_RUN_AS_NODE: '1',
+        ...pythonEnv,
       },
     };
   }
@@ -73,7 +121,7 @@ function getBackendCommand() {
     args: ['main.js'],
     cwd: apiDir,
     shell: process.platform === 'win32',
-    extraEnv: {},
+    extraEnv: pythonEnv,
   };
 }
 
@@ -124,53 +172,98 @@ function waitForBackend(timeoutMs = 45 * 60 * 1000) {
   const startedAt = Date.now();
 
   return new Promise((resolve, reject) => {
-    const check = () => {
-      const request = http.get(`${BACKEND_URL}/api/health`, (response) => {
-        let body = '';
-        response.setEncoding('utf8');
-        response.on('data', (chunk) => {
-          body += chunk;
-        });
-        response.on('end', () => {
-          try {
-            const data = JSON.parse(body);
+    let settled = false;
+    let timer = null;
+    let inFlight = null;
 
-            if (data.status === 'error') {
-              reject(new Error(data.detail || 'API error'));
-              return;
-            }
-
-            if (data.ready) {
-              resolve();
-              return;
-            }
-
-            sendLoader('loader-status', data.detail || 'Загрузка моделей Silero...');
-            retry();
-          } catch {
-            retry();
-          }
-        });
-      });
-
-      request.on('error', retry);
-      request.setTimeout(2000, () => {
-        request.destroy();
-        retry();
-      });
-    };
-
-    const retry = () => {
-      if (Date.now() - startedAt > timeoutMs) {
-        reject(
-          new Error(
-            `API не запустился за 45 минут. Лог: ${getLogPath()}`,
-          ),
-        );
+    const finish = (callback) => {
+      if (settled) {
         return;
       }
 
-      setTimeout(check, 1000);
+      settled = true;
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      if (inFlight) {
+        inFlight.destroy();
+        inFlight = null;
+      }
+      callback();
+    };
+
+    const schedule = () => {
+      if (settled || timer) {
+        return;
+      }
+
+      if (Date.now() - startedAt > timeoutMs) {
+        finish(() => {
+          reject(new Error(`API не запустился за 45 минут. Лог: ${getLogPath()}`));
+        });
+        return;
+      }
+
+      timer = setTimeout(() => {
+        timer = null;
+        check();
+      }, 1000);
+    };
+
+    const check = () => {
+      if (settled) {
+        return;
+      }
+
+      const request = http.get(
+        `${BACKEND_URL}/api/health`,
+        { agent: false, timeout: 2000 },
+        (response) => {
+          let body = '';
+          response.setEncoding('utf8');
+          response.on('data', (chunk) => {
+            body += chunk;
+          });
+          response.on('end', () => {
+            if (settled) {
+              return;
+            }
+
+            try {
+              const data = JSON.parse(body);
+
+              if (data.status === 'error') {
+                finish(() => {
+                  reject(new Error(data.detail || 'API error'));
+                });
+                return;
+              }
+
+              if (data.ready) {
+                finish(resolve);
+                return;
+              }
+
+              sendLoader('loader-status', data.detail || 'Запуск...');
+            } catch {
+              // API ещё не отвечает JSON — просто ждём следующий тик
+            }
+
+            schedule();
+          });
+        },
+      );
+
+      inFlight = request;
+      request.on('timeout', () => {
+        request.destroy();
+      });
+      request.on('error', () => {
+        if (!settled) {
+          schedule();
+        }
+      });
     };
 
     check();
